@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_paeva_kokkuvote
+    description: Päevane ilmakokkuvõte ja soovitus iga asukoha kohta.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+      - name: asukoha_id
+        data_tests:
+          - not_null
+      - name: prognoos_kuupaev
+        data_tests:
+          - not_null
+      - name: kesk_skoor
+        data_tests:
+          - not_null
+      - name: paeva_soovitus
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Väga sobiv', 'Sobiv', 'Piiripealne', 'Ebasoodne']
+
+  - name: mart_parimad_ajavahemikud
+    description: Parimad 3-tunnised ajaaknad välitegevuseks, kesk_skoor >= 50.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+      - name: asukoha_id
+        data_tests:
+          - not_null
+      - name: vahemiku_algus
+        data_tests:
+          - not_null
+      - name: kesk_skoor
+        data_tests:
+          - not_null
+      - name: soovitus
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Väga sobiv', 'Sobiv', 'Piiripealne']

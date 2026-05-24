@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_ilmaandmed
+    description: Puhastatud toorandmed — null-read eemaldatud, kuupäev ja tund tuletatud.
+    columns:
+      - name: run_id
+        description: Töövoo käivituse ID.
+        data_tests:
+          - not_null
+      - name: asukoha_id
+        description: Asukoha identifikaator.
+        data_tests:
+          - not_null
+      - name: prognoos_aeg
+        description: Prognoositund.
+        data_tests:
+          - not_null
+      - name: temperatuur_c
+        data_tests:
+          - not_null
+      - name: sademed_mm
+        data_tests:
+          - not_null
+      - name: tuulekiirus_ms
+        data_tests:
+          - not_null
+      - name: on_paev
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]

@@ -1,0 +1,9 @@
+pood_id,pood_nimi,linn,maakond,poe_suurus_m2
+tallinn_kesklinn,Tallinn Kesklinn,Tallinn,Harjumaa,3200
+tallinn_lasnamae,Tallinn Lasnamäe,Tallinn,Harjumaa,2100
+tartu_lõunakeskus,Tartu Lõunakeskus,Tartu,Tartumaa,2800
+parnu_rannapark,Pärnu Rannapark,Pärnu,Pärnumaa,1600
+narva_astri,Narva Astri,Narva,Ida-Virumaa,1400
+viljandi_centrum,Viljandi Centrum,Viljandi,Viljandimaa,1100
+kuressaare_market,Kuressaare Market,Kuressaare,Saaremaa,900
+haapsalu_promenaad,Haapsalu Promenaad,Haapsalu,Läänemaa,800

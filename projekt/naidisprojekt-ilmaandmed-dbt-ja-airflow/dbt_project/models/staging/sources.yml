@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: staging
+    description: Toorandmed, mille Airflow DAG laadib API-st otse andmebaasi.
+    tables:
+      - name: ilmaandmed_raw
+        description: Open-Meteo API tunnipõhised ilmaandmed — üks rida = üks asukoht × üks prognoositund.
+        columns:
+          - name: run_id
+            description: Töövoo käivituse unikaalne identifikaator (UUID).
+          - name: asukoha_id
+            description: Asukoha lühiidentifikaator (nt 'tallinn').
+          - name: asukoha_nimi
+            description: Asukoha kuvatav nimi (nt 'Tallinn').
+          - name: prognoos_aeg
+            description: Prognoositund (timestamp, Euroopa/Tallinn ajavööndi järgi).
+          - name: temperatuur_c
+            description: Õhutemperatuur Celsiuse kraadides 2 m kõrgusel.
+          - name: sademed_mm
+            description: Sademete kogus millimeetrites tunni jooksul.
+          - name: sademe_toenaosus_pct
+            description: Sademete tõenäosus protsentides (0–100).
+          - name: tuulekiirus_ms
+            description: Tuulekiirus meetrites sekundis 10 m kõrgusel.
+          - name: on_paev
+            description: 1 kui on päev (päike taevas), 0 kui on öö.

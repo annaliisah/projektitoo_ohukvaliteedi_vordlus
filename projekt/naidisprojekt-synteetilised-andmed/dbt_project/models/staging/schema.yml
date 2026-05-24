@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_myygiandmed
+    description: Puhastatud müügiandmed — negatiivsed väärtused eemaldatud, kuupäev ja kellaajkategooria tuletatud.
+    columns:
+      - name: pood_id
+        data_tests:
+          - not_null
+      - name: mootmise_aeg
+        data_tests:
+          - not_null
+      - name: kylastajad
+        data_tests:
+          - not_null
+      - name: kaive_eur
+        data_tests:
+          - not_null
+      - name: kellaaeg_kategooria
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['hommik', 'louna', 'parastlouna', 'ohtul', 'muu']

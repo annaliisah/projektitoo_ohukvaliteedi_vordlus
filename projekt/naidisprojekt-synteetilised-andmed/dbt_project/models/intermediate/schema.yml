@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_myyk_tunnipohine
+    description: Tunnipõhine müügitõhusus kaupluste lõikes (käive / külastaja).
+    columns:
+      - name: pood_id
+        data_tests:
+          - not_null
+      - name: mootmise_aeg
+        data_tests:
+          - not_null
+      - name: kaive_kylastaja_kohta
+        description: Käive eurodes ühe külastaja kohta.
+        data_tests:
+          - not_null
+      - name: tohususe_tase
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Kõrge', 'Keskmine', 'Madal']

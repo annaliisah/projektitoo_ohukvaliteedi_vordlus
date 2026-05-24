@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: mart_pood_paevane
+    description: Päevane müügikokkuvõte iga kaupluse kohta.
+    columns:
+      - name: pood_id
+        data_tests:
+          - not_null
+      - name: mootmise_kuupaev
+        data_tests:
+          - not_null
+      - name: kaive_kokku_eur
+        data_tests:
+          - not_null
+      - name: kesk_tohusus
+        data_tests:
+          - not_null
+      - name: paevane_tohususe_tase
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Kõrge', 'Keskmine', 'Madal']
+
+  - name: mart_parimad_tunnid
+    description: Tunnipõhine müügitõhususe statistika kaupluste ja kellaaegade lõikes.
+    columns:
+      - name: pood_id
+        data_tests:
+          - not_null
+      - name: mootmise_tund
+        data_tests:
+          - not_null
+      - name: kesk_tohusus
+        data_tests:
+          - not_null

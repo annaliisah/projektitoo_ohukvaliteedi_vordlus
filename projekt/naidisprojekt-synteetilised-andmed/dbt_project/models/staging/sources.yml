@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: staging
+    description: Sünteetilised toorandmed, mille generate_data.py skript kirjutab andmebaasi.
+    tables:
+      - name: raw_myygiandmed
+        description: Tunnipõhised müügimõõtmised — üks rida = üks kauplus × üks tund.
+        columns:
+          - name: pood_id
+            description: Kaupluse unikaalne identifikaator.
+          - name: mootmise_aeg
+            description: Mõõtmise hetk (timestamp, tunni täpsusega).
+          - name: kylastajad
+            description: Kauplust külastanud inimeste arv selle tunni jooksul (sünteetiline).
+          - name: kaive_eur
+            description: Kaupluse käive eurodes selle tunni jooksul (sünteetiline).

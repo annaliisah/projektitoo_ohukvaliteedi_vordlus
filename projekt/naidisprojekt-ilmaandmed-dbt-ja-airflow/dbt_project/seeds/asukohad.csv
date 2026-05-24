@@ -1,0 +1,11 @@
+asukoha_id,asukoha_nimi,maakond,laiuskraad,pikkuskraad,on_aktiivne
+tallinn,Tallinn,Harju maakond,59.4370,24.7536,true
+tartu,Tartu,Tartu maakond,58.3776,26.7290,true
+parnu,Pärnu,Pärnu maakond,58.3858,24.5046,true
+narva,Narva,Ida-Viru maakond,59.3772,28.1903,true
+rakvere,Rakvere,Lääne-Viru maakond,59.3470,26.3576,true
+viljandi,Viljandi,Viljandi maakond,58.3636,25.5958,true
+kuressaare,Kuressaare,Saare maakond,58.2479,22.5052,true
+haapsalu,Haapsalu,Lääne maakond,58.9442,23.5439,true
+voru,Võru,Võru maakond,57.8333,27.0167,true
+jogeva,Jõgeva,Jõgeva maakond,58.7453,26.3953,true

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: int_ilmaandmed_skoor
+    description: Tunnipõhine välitegevuse sobivusskoor (0–100) kõigi asukohtade lõikes.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+      - name: asukoha_id
+        data_tests:
+          - not_null
+      - name: prognoos_aeg
+        data_tests:
+          - not_null
+      - name: koguskoor
+        description: Kombineeritud skoor vahemikus 0–100.
+        data_tests:
+          - not_null
+      - name: sobivuse_silt
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Väga sobiv', 'Sobiv', 'Piiripealne', 'Ebasoodne']
