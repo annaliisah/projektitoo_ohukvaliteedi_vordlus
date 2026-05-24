@@ -74,7 +74,7 @@ Mall sisaldab kõik vajalikud sektsioonid. Mõned täpsustused:
 ## Sagedased küsimused
 **Mis siis, kui pole jõudnud kõike teha 24.05-ks?** Esitage see, mis on valmis. Hilinenud esitused võtame vastu, aga märkige docs/arhitektuur.md failis, mis on veel lahtine. Sprindi 3 viimane tähtaeg on ainus, mis on lukus.
 
-**Kas peame valima lõpliku tehnoloogiavirna kohe? **Ei. Kursuse vaikevalik (PostgreSQL, dbt, Airflow, Superset) sobib enamikele projektidele. Kui te kahtlete, märkige praegune eelistus ja viimistlege sprindi 2 ajal. Kui kasutate alternatiivset virna (näiteks Microsoft Fabric, Snowflake), märkige see ja põhjendage lühidalt.
+**Kas peame valima lõpliku tehnoloogiavirna kohe?** Ei. Kursuse vaikevalik (PostgreSQL, dbt, Airflow, Superset) sobib enamikele projektidele. Kui te kahtlete, märkige praegune eelistus ja viimistlege sprindi 2 ajal. Kui kasutate alternatiivset virna (näiteks Microsoft Fabric, Snowflake), märkige see ja põhjendage lühidalt.
 
 **Kas peame andmeallika juba pärima tegelikult andmetega?** Sprindi 1 lõpuks piisab, kui olete kontrollinud, et ligipääs töötab (näiteks teinud ühe testpäringu, mille vastus on salvestatud). Tegelik korduv pärimine on sprindi 2 ülesanne.
 
@@ -150,12 +150,6 @@ Iga vahetagasiside on individuaalne, konfidentsiaalne ja võtab 5 minutit. Vorm 
 2. Kuidas hindad teiste grupiliikmete panust? (võrdne / suurem / väiksem, lühike kommentaar)
 3. Kas on midagi, mida juhendaja peaks teadma? (vaba tekst, pole kohustuslik)
 Vastused on nähtavad ainult juhendajatele, mitte teistele grupiliikmetele.
-
-|nädal|   |
-|---|---|
-|   |   |
-svsv|sgsg
-jsja|kka
 
 ## 3. Mida pead nelja nädala jooksul tegema
 Ajakava
