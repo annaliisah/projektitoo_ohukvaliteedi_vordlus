@@ -1,4 +1,4 @@
-# [GRUPI NIMI] — [PROJEKTI PEALKIRI]
+# Õhukvaliteedi mudelprognoosi ja seirejaama mõõtmiste võrdlus
 
 > **Juhend:** Asenda kõik nurksulgudes vormid oma sisuga enne esitamist. Kustuta see juhendrida.
 
@@ -122,7 +122,7 @@ Testide tulemused: [kuhu salvestatakse / kuidas vaadata]
 
 | Nimi | Roll |
 |------|------|
-| [Nimi 1] | [Roll] |
-| [Nimi 2] | [Roll] |
-| [Nimi 3] | [Roll] |
-| [Nimi 4] | [Roll — vabatahtlik] |
+| Anna-Liisa Hannus | [Roll] |
+| Heigo Reinek | [Roll] |
+| Kristen Maisey| [Roll] |
+| Liivika Koobakene | [Roll] |
