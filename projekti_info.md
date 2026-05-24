@@ -1,5 +1,21 @@
 # projektitöö ja sprintide info
 
+# Teema püstitus - Priit Adler
+
+## Õhukvaliteedi mudelprognoosi ja seirejaama mõõtmiste võrdlus
+- e-mail - priit.adler@ut.ee
+- Tase - eelistus puudub
+- Teema pealkiri - Õhukvaliteedi mudelprognoosi ja seirejaama mõõtmiste võrdlus
+- Äriküsimus - Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega?
+- Andmeallikad ja nende muutuvus ajas - Open-Meteo Air Quality API annab CAMS mudelipõhiseid õhukvaliteedi andmeid. past_days võimaldab küsida kuni 92 päeva tagasi ja start_date / end_date kaudu saab küsida ajaloolist CAMS reanalüüsi. Ohuseire.ee annab Eesti seirejaamade mõõteandmeid JSON-kujul, näiteks jaamad https://www.ohuseire.ee/api/station/et?type=INDICATOR, näitajad https://www.ohuseire.ee/api/indicator/et?type=INDICATOR ja mõõtmised https://www.ohuseire.ee/api/monitoring/et?....
+- Andmete jagatavus avalikud
+- Mitut grupi liiget otsite? - 4: olen mentor, ei osale ise grupitöös
+- Lisamärkused - Näidikulaud võiks näidata mõõdetud väärtust, mudelväärtust, nende vahet ja keskmist absoluutset viga.
+
+# sprint 2
+
+... 
+
 # sprint 1
 
 ## Eesmärk
