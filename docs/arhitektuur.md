@@ -66,13 +66,16 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| Open-Meteo Air Quality API | API | Jah, [iga X tundi / päeva] | Mudelipõhiste õhukvaliteedi andmete saamiseks |
-| Ohuseire.ee | JSON | ... | Eesti seirejaamade mõõteandmete saamiseks |
-| [Nimi] | [seed / dim-tabel] | Ei, staatiline | [Milleks kasutatakse?] |
+| [Andmeallika nimi] | [API / fail / andmebaas] | Jah, [iga tund / päevas / muu] | Põhiandmevoog |
+| [Teise allika nimi] | [seed / dim-tabel] | Ei, staatiline | Kõrvaltabel |
+| Open-Meteo Air Quality API | API | Jah, iga tund | Mudelprognooside põhiandmevoog |
+| Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised |
+| Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
+| Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete ja mõõdikute kirjeldused |
 
-*- Open-Meteo Air Quality API annab CAMS mudelipõhiseid õhukvaliteedi andmeid. past_days võimaldab küsida kuni 92 päeva tagasi ja start_date / end_date kaudu saab küsida ajaloolist CAMS reanalüüsi. Ohuseire.ee annab Eesti seirejaamade mõõteandmeid JSON-kujul, näiteks jaamad https://www.ohuseire.ee/api/station/et?type=INDICATOR, näitajad https://www.ohuseire.ee/api/indicator/et?type=INDICATOR ja mõõtmised https://www.ohuseire.ee/api/monitoring/et?....*
+<!-- *- Open-Meteo Air Quality API annab CAMS mudelipõhiseid õhukvaliteedi andmeid. past_days võimaldab küsida kuni 92 päeva tagasi ja start_date / end_date kaudu saab küsida ajaloolist CAMS reanalüüsi. Ohuseire.ee annab Eesti seirejaamade mõõteandmeid JSON-kujul, näiteks jaamad https://www.ohuseire.ee/api/station/et?type=INDICATOR, näitajad https://www.ohuseire.ee/api/indicator/et?type=INDICATOR ja mõõtmised https://www.ohuseire.ee/api/monitoring/et?....* -->
 
-## Andmevoog
+## Andmevoog - TODO 
 
 ```mermaid
 flowchart LR
@@ -87,14 +90,14 @@ flowchart LR
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
 
-## Andmebaasi kihid
+## Andmebaasi kihid - TODO?
 
 | Kiht | Roll |
 |------|------|
 | `staging` | Hoiab allika andmeid töötlemata kujul. |
 | `mart` | Hoiab transformeeritud ja ärilogikat sisaldavaid tabeleid. |
 
-## Tööjaotus
+## Tööjaotus - TODO
 
 | Roll | Vastutus | Täitja |
 |------|----------|--------|
@@ -103,7 +106,7 @@ flowchart LR
 | Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | [Nimi] |
 | Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | [Nimi] |
 
-## Riskid
+## Riskid - TODO 
 
 | Risk | Mõju | Maandus |
 |------|------|---------|
@@ -111,6 +114,6 @@ flowchart LR
 | [Risk 2] | [Mis juhtub?] | [Kuidas maandad?] |
 | [Risk 3] | [Mis juhtub?] | [Kuidas maandad?] |
 
-## Privaatsus ja turve
+## Privaatsus ja turve - TODO
 
 [Kirjelda, millised isiku- või tundlikud andmed teie projektis esinevad (kui üldse) ja kuidas neid kaitsete. Isikuandmed peavad olema anonümiseeritud. Andmebaasi paroolid peavad tulema `.env` failist.]

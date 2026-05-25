@@ -12,9 +12,68 @@
 - Mitut grupi liiget otsite? - 4: olen mentor, ei osale ise grupitöös
 - Lisamärkused - Näidikulaud võiks näidata mõõdetud väärtust, mudelväärtust, nende vahet ja keskmist absoluutset viga.
 
+# sprint 3
+
+...
+
 # sprint 2
 
-... 
+## Eesmärk
+Selle sprindi lõpuks on grupil olemas üks minimaalne, kuid täielik otsast-otsani andmevoog: **üks allikas → andmete sissevõtt → üks transformatsioon → üks visuaal**. See peab päriselt töötama, mitte ainult plaanina kirjas olema.
+
+Eesmärk ei ole veel täielikult valmis projekt. Eesmärk on leida tehnilised probleemid varakult, kuni nende lahendamiseks on veel aega. Te ei pea sel nädalal katma kõiki andmeallikaid ega kõiki teste. Te peate nägema, kus tekivad pudelikaelad.
+
+## Tegevused nädala jooksul
+- **Ehitage üks andmevoog lõpuni välja**. Valige üks allikas ja viige andmed läbi kogu toru kuni visuaalini. Pigem üks asi, mis töötab täielikult, kui mitu asja, mis on pooleli.
+- **Tehke andmete sissevõtt korratavaks**. Kood, mille saab uuesti käivitada ja mis annab sama tulemuse (idempotentne). Käivitamine võib olla käsitsi käivitatav skript, ajastatud (cron, Airflow, Prefect, Dagster) või sündmuspõhine.
+- **Laadige toorandmed toorkihti**. Bronze / staging. Muutmata kujul, nii nagu allikast tuli.
+- **Tehke vähemalt üks transformatsioon**. Toorandmed analüüsiks sobivaks. Tüübiteisendus, puhastus, liitmine vms.
+- **Tooge üks visuaal nähtavale**. Üks KPI või graafik, mis vastab teie äriküsimusele. See ei pea olema viimistletud.
+- **Uuendage `docs/arhitektuur.md`,** kui tegelikkus muutub Sprint 1 plaanist.
+
+## Mida esitada
+
+**Grupitöö (üks esitus grupi kohta)** Moodle assignmentis "Sprint 2 esitus (grupitöö)":
+- Kinnitus, et docs/progress.md on repos täidetud ja commit'itud. Lisage otselink sellele failile (nt https://github.com/grupp/repo/blob/main/docs/progress.md).
+- Kui repo link või ligipääs on Sprint 1-st muutunud, märkige uus. Muidu jätke tühjaks, kasutame Sprint 1 linki.
+
+Repo peab sisaldama toimivat minimaalset andmevoogu (üks allikas → transformatsioon → visuaal).
+
+**Individuaalne (iga osaleja eraldi)** Moodle assignmentis "Sprint 2 vahetagasiside (individuaalne)". Sama vorm kui igal projektitöö nädalal, 3 küsimust, umbes 5 minutit, nähtav ainult juhendajatele.
+
+## Hindamine
+Selle sprindi esitust eraldi arvestatud/mittearvestatud hindega ei märgita. See on eeldus arvestuse saamiseks (iganädalane väljund peab olema esitatud) ja sisend lõpparvestusse.
+
+Vaatame Sprint 2 esituse osas:
+- **Andmevoog on terviklik**. Andmed liiguvad allikast visuaalini. Ka kui katab vaid ühte allikat.
+- **Sissevõtt on korratav**. Käivitatav ja idempotentne kood, mitte ühekordne käsitsi import.
+- **Transformatsioon töötab**. Vähemalt üks samm toorandmetest analüüsiks sobivani.
+- **Visuaal on nähtaval**. Vähemalt üks KPI või graafik.
+- **`docs/progress.md` on aus.** Mis on valmis, mis pooleli, mis takistab.
+
+Sisuline tagasiside `docs/progress.md` ja edenemise osas tuleb Sprint 3 alguses.
+
+## Ootused failile docs/progress.md
+
+Hoidke see lühike ja selge:
+- **Mis on valmis**: linnukesed + üks-kaks täpsustavat lauset.
+- **Järgmised sammud**: 2–3 konkreetset tegevust.
+- **Mis takistab**: ausalt. Kui blokeerivaid probleeme pole, kirjutage seda.
+- **Kontrollpunkt**: midagi, millega juhendaja saab näha, et töövoog töötab, ja on olemas oodatav tulemus.
+
+## Sagedased küsimused
+**Kas andmevoog peab katma kõik andmeallikad**? Ei. Sprint 2-s piisab ühest allikast lõpuni. Ülejäänud allikad lisate Sprint 3-s.
+
+**Kas sissevõtt peab olema ajastatud (automaatne)?** Ei. Käsitsi käivitatav, kuid korratav ja idempotentne skript on aktsepteeritav. Ajastamine on boonus ja võib jääda Sprint 3-le. Oluline on, et see ei ole ühekordne käsitsi import.
+
+**Kas visuaal peab olema valmis dashboard?** Ei. Üks KPI või graafik piisab. Viimistlemine ja teine visuaal kuuluvad Sprint 3-le.
+
+Me ei jõudnud transformatsiooni või visuaali teha. Mis siis? Esitage, mis on valmis, ja märkige docs/progress.md sektsioonis "Mis takistab", mis on lahtine. Ainus lukus tähtaeg on projektitöö esitamine 07.06. Mõnetunnine või ühepäevane vahesammu hilinemine on andestatav, kui see pole süstemaatiline.
+
+## Abi
+- Üldised küsimused: Moodle foorum "Projektitöö küsimused"
+- 15-minutiline konsultatsioon: broneerimise link Moodle-s
+- Kui broneerimises pole vabu aegu, andke meilile märku
 
 # sprint 1
 

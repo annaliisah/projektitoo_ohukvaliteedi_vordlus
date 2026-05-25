@@ -17,7 +17,7 @@ Projekt aitab hinnata CAMS mudelprognoosi täpsust Eesti tingimustes ning võima
 1. Mõõdetud ja prognoositud õhukvaliteedi väärtuste erinevus
 2. Keskmine absoluutne viga (MAE)
 
-## Arhitektuur
+## Arhitektuur - TODO
 
 ```mermaid
 flowchart LR
@@ -41,7 +41,7 @@ Täpsem kirjeldus: [`docs/arhitektuur.md`](docs/arhitektuur.md)
 | Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
 | Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete ja mõõdikute kirjeldused |
 
-## Stack
+## Stack - TODO
 
 | Komponent | Tööriist |
 |-----------|---------|
@@ -51,7 +51,7 @@ Täpsem kirjeldus: [`docs/arhitektuur.md`](docs/arhitektuur.md)
 | Näidikulaud | [Superset / Streamlit / muu] |
 | Orkestreerimine | [Airflow / cron / muu] |
 
-## Käivitamine
+## Käivitamine - TODO 
 
 ```bash
 # 1. Klooni repo ja liigu kausta
@@ -72,7 +72,7 @@ docker compose up -d --build
 Airflow (kui kasutatakse): http://localhost:8080 (kasutaja: airflow / parool: airflow)
 Näidikulaud: http://localhost:[PORT]
 
-## Saladused ja konfiguratsioon
+## Saladused ja konfiguratsioon - TODO 
 
 Kõik saladused (paroolid, API võtmed, andmebaasi URL-id) on `.env` failis. Repos on ainult `.env.example`, mis näitab vajalike muutujate struktuuri ilma tegelike väärtusteta. Päris `.env` faili ei tohi GitHubi panna - see on `.gitignore`-s.
 
@@ -83,7 +83,7 @@ Vajalikud muutujad:
 | `DB_PASSWORD` | PostgreSQL parool | (saladus) |
 | `[teised]` | ... | ... |
 
-## Andmevoog lühidalt
+## Andmevoog lühidalt - TODO 
 
 1. **Sissevõtt** — [Kirjelda, kuidas andmed allikast kätte saadakse]
 2. **Laadimine** — Andmed laaditakse `staging` kihti
@@ -91,7 +91,7 @@ Vajalikud muutujad:
 4. **Testimine** — [Mitu] andmekvaliteedi testi kontrollivad korrektsust
 5. **Näidikulaud** — [Kirjelda lühidalt, mida näidikulaud näitab]
 
-## Andmekvaliteedi testid
+## Andmekvaliteedi testid - TODO 
 
 Projekt kontrollib järgmist:
 
@@ -102,7 +102,7 @@ Projekt kontrollib järgmist:
 
 Testide tulemused: [kuhu salvestatakse / kuidas vaadata]
 
-## Projekti struktuur
+## Projekti struktuur - TODO 
 
 ```
 .
@@ -116,7 +116,7 @@ Testide tulemused: [kuhu salvestatakse / kuidas vaadata]
 └── ...                     ← ülejäänud projektifailid
 ```
 
-## Kokkuvõte, puudused ja võimalikud edasiarendused
+## Kokkuvõte, puudused ja võimalikud edasiarendused - TODO 
 
 **Kokkuvõte:**
 - [Loetle, mis on lõpule viidud, mis töötab hästi]
@@ -127,7 +127,7 @@ Testide tulemused: [kuhu salvestatakse / kuidas vaadata]
 **Mis edasi:**
 - [Mida tahaksid edasi teha, kui aega oleks rohkem]
 
-## Meeskond
+## Meeskond - TODO rollid
 
 | Nimi | Roll |
 |------|------|
