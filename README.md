@@ -5,12 +5,17 @@
 ## Äriküsimus
 
 [Kirjelda ühe-kahe lausega, millise andmetega seotud probleemi te lahendate ja kes sellest kasu saab.]
+Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega?  
+Projekt aitab hinnata CAMS mudelprognoosi täpsust Eesti tingimustes ning võimaldab võrrelda prognoose tegelike mõõtmistega eri piirkondades ja saasteainete lõikes.
 
 **Mõõdikud:**
 
 1. [Esimene KPI või mõõdik — näiteks: päevane müük poe kohta]
 2. [Teine KPI või mõõdik]
 3. [Kolmas KPI või mõõdik — vabatahtlik]
+
+1. Mõõdetud ja prognoositud õhukvaliteedi väärtuste erinevus
+2. Keskmine absoluutne viga (MAE)
 
 ## Arhitektuur
 
@@ -31,6 +36,10 @@ Täpsem kirjeldus: [`docs/arhitektuur.md`](docs/arhitektuur.md)
 |---------|------|--------------|------|
 | [Andmeallika nimi] | [API / fail / andmebaas] | Jah, [iga tund / päevas / muu] | Põhiandmevoog |
 | [Teise allika nimi] | [seed / dim-tabel] | Ei, staatiline | Kõrvaltabel |
+| Open-Meteo Air Quality API | API | Jah, iga tund | Mudelprognooside põhiandmevoog |
+| Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised |
+| Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
+| Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete ja mõõdikute kirjeldused |
 
 ## Stack
 
