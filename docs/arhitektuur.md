@@ -115,10 +115,11 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 
 | Risk | Mõju | Maandus |
 |------|------|---------|
-| [Risk 1 — näiteks: API ei vasta] | Mõõteandmed ei tule üle |  |
-| [Risk 2] | [Mis juhtub?] | [Kuidas maandad?] |
+| API ei vasta | Mõõteandmed ei tule üle |  |
+| API andmeväljad või struktuur muutuvad | [Mis juhtub?] | [Kuidas maandad?] |
 | [Risk 3] | [Mis juhtub?] | [Kuidas maandad?] |
 
 ## Privaatsus ja turve - TODO
 
-[Kirjelda, millised isiku- või tundlikud andmed teie projektis esinevad (kui üldse) ja kuidas neid kaitsete. Isikuandmed peavad olema anonümiseeritud. Andmebaasi paroolid peavad tulema `.env` failist.]
+Projektis ei esine isikuandmeid ega tundlikke andmeid. 
+Andmebaasi paroolid tulevad `.env` failist
