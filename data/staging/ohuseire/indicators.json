@@ -1,0 +1,1499 @@
+[
+  {
+    "id": 1,
+    "name": "Vääveldioksiid",
+    "formula": "SO<sub>2</sub>",
+    "unit": "µg/m3",
+    "description": "Vääveldioksiid eraldub välisõhku valdavalt väävlit sisaldavate kütuste põletamisel. Atmosfääris toimuvate keemiliste reaktsioonide tulemusena muutub väävelhappeks ja sadeneb keskkonda hapestava parameetrina. Pikaajalisel kokkupuutel vääveldioksiidi kõrge kontsentratsiooniga võivad tekkida kopsukahjustused. Kõrge vääveldioksiidi kontsentratsioon sissehingatavas õhus põhjustab bronhide ahenemist ja suurendab lima eritumist. Pikaajaline kokkupuude kahandab kopsufunktsiooni ja kahjustab hingamisteid (sarnane mõju kui kroonilise bronhiidi puhul).",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 350
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lämmastikdioksiid",
+    "formula": "NO<sub>2</sub>",
+    "unit": "µg/m3",
+    "description": "Välisõhku satub lämmastikdioksiid põlemisprotsessides kõrgel temperatuuril õhulämmastiku ja hapniku vahelise reaktsiooni tulemusena. Linnakeskkonnas olev lämmastikdioksiid pärineb valdavalt liiklusest, eriti diiselmootoritega autodest. Silmade, nina ja kurgu ärritaja. Võib põhjustada nõrgenenud kopsutalitlust ja suurendada hingamisteede infektsioonide ohtu lastel ja noorukitel. Väga kõrged lämmastikdioksiidi tasemed võivad põhjustada kopsuturset ja hajutatud kopsukahjustusi (diffuse lung injury). Jätkuv kokkupuude kõrgete lämmastikdioksiidi tasemetega põhjustab akuutse või kroonilise bronhiidi teket. Pikaajaline kokkupuude lämmastikdioksiidi madalate kontsentratsioonidega võib põhjustada astmaatikutel bronhide reaktiivsuse suurenemist, kroonilise kopsuobstruktsiooniga inimestel vähenenud kopsutalitlust ja suurendab hingamisteede nakkushaiguste riski, eriti lastel.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 150
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 75
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Süsinikoksiid",
+    "formula": "CO",
+    "unit": "mg/m3",
+    "description": "Süsinikoksiid ehk vingugaas tekib süsinikku sisaldavate kütuste mittetäielikul põlemisel. Linnakeskkonnas pärineb süsinikoksiid peamiselt liiklusest ja ahiküttest. Süsinikoksiidil on tugev mõju inimese ja loomade tervisele. Sissehingamisel seotakse süsinikoksiid vere hemoglobiiniga (moodustub karboksühemoglobiin) hapniku asemel. See vähendab punaste vereliblede võimet transportida hapnikku kudedesse ja eriti südamelihasele ja ajusse.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 5
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 2.5
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 1
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 0.5
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Osoon",
+    "formula": "O<sub>3</sub>",
+    "unit": "µg/m3",
+    "description": "Maapinnalähedane (troposfääri) osoon moodustub lämmastiku oksiidide, süsinikoksiidi ja orgaaniliste süsivesinike vahelistel fotokeemilistel reaktsioonidel atmosfääris. Tingituna asjaolust, et osad osooni eeldusained nagu lämmastikoksiidid ja metaan võivad kanduda algsest emissioonipaigast väga kaugele on osoonisaaste sageli maapiirkondade probleem. Osooni näol on tegemist akuutse saasteainega, mis võib põhjustada kardiovaskulaarseid tervisehäireid. Osoon põhjustab kudede kahjustusi, kahjustades hingamisteid katvaid rakke, põhjustades paistetusi ja põletikulisi protsesse. Lisaks ärritab osoon hingamisteid: köha, ärritatud kurk jms ebameeldivad vaevused rinnus. Vähendab kopsufunktsiooni takistades sügavalt hingamist ja põhjustades seeläbi hapnikuvaegust kudedes. Süvendab astmat hingamisteede ahenemise kaudu.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 180
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 120
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 75
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lenduvad orgaanilised ühendid",
+    "formula": "NMHC",
+    "unit": "µg/m3",
+    "description": "Lenduvad orgaanilised ühendid ehk LOÜ (volatile organic compounds – VOC) on üldnimetus õhus sisalduvate orgaaniliste saasteainete kohta (temperatuuril 20°C on aururõhk > 0,01 kPa). Hõlmab väga toksilisi kui suhteliselt inertseid keemilisi ühendeid. Kuna LOÜ on üldnimetus ei saa välja tuua ühte konkreetset toimemehhanismi. LOÜ alla kuuluvad näiteks benseen, tolueen, atsetoon, formaldehüüd, atsetaldehüüd, alifaatsed süsivesinikud jne.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 5000
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 2000
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 1000
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ammoniaak",
+    "formula": "NH<sub>3</sub>",
+    "unit": "ug/m3",
+    "description": "Ammoniaak on terava ja ärritava lõhnaga gaas, mis satub välisõhku peamiselt loomapidamisest. Samuti eraldub ammoniaaki välisõhku osadest külmutusseadmetest kus ammoniaaki kasutatakse külmutusagendina. Välisõhus on ammoniaagi lubatud tunnikeskmiseks sisalduseks 200 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 1000
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 750
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Vesiniksulfiid",
+    "formula": "H<sub>2</sub>S",
+    "unit": "ug/m3",
+    "description": "Vesiniksulfiid on ebameeldiva lõhnaga (mädamuna lõhnaga) gaas, mis tekib bioloogilise materjali anaeroobsel käärimisel (veepuhastusjaamad, põllumajandus jne). Vesiniksulfiidi eraldub välisõhku ka mitmete naftaproduktide (eelkõige raske kütteõli) ja põlevkiviõli laadimisel ja soojendamisel. Välisõhus esinevad tasemed on enamasti madalamad ebasoodsat tervisemõju põhjustavatest tasemetest kuid tingituna ebameeldivast lõhnast mõjub häirivalt. Välisõhus on vesiniksulfiidi maksimaalne lubatud kontsentratsioon 8 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 8
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 5
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 2
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 1
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Elavhõbe",
+    "formula": "Hg",
+    "unit": "ng/m3",
+    "description": "Elavhõbe esineb välisõhus gaasilisel kujul. Elavhõbeda aurud on inimese tervisele ohtlikud.  Elavhõbe on üks EL prioriteetsetest välisõhu saasteainetest.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 5
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 3
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 2
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 1
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Benseen",
+    "formula": "C<sub>6</sub>H<sub>6</sub>",
+    "unit": "µg/m3",
+    "description": "Benseen on lihtsaima struktuuriga aromaatne süsivesinik. Välisõhku satub benseen liiklusest (põlemata bensiinijäägid), naftaproduktide laadimisest ja värvide/lakkide kasutamisest. Benseen on pikaajalisel kokkupuutel kantserogeense (vähki tekitav) toimega. Välisõhus on benseeni tunnikeskmine lubatud kontsentratsioon 200 µg/m³ ja aastakeskmine kontsentratsioon 5 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Tolueen",
+    "formula": "C<sub>7</sub>H<sub>8</sub>",
+    "unit": "µg/m3",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Ksüleen",
+    "formula": "C<sub>8</sub>H<sub>10</sub>",
+    "unit": "µg/m3",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 200
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "TSP",
+    "formula": "TSP",
+    "unit": "mg/m3",
+    "description": null
+  },
+  {
+    "id": 21,
+    "name": "Peened osakesed",
+    "formula": "PM10",
+    "unit": "µg/m3",
+    "description": "Tahked ja vedelad osakesed aerodünaamilise diameetriga alla 10 mikromeetri (0,00001 meetrit). Satuvad välisõhku teekattelt, põlemisprotsessidest jne. Sõltuvat tekkeprotsessist on väga erineva keemilise koostisega ja mitmesuguse mõjuga inimeste tervisele. Linnaõhus sisalduvad peened osakesed pärinevad liiklusest, teekattelt, koduahjudest ja paljudest muudest allikatest. Linnaõhus on suurusjärgus 5-10 µg/m³ peeneid osakesi pärit väljastpoolt linna asuvaid saasteallikaid. Peente osakeste lubatud ööpäevakeskmine sisaldus on 50 µg/m³ ja aastakeskmine sisaldus on 40 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 75
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Eriti peened osakesed",
+    "formula": "PM2.5",
+    "unit": "µg/m3",
+    "description": "Tahked ja vedelad osakesed aerodünaamilise diameetriga alla 2,5 mikromeetri (0,0000025 meetrit). Satuvad välisõhku peamiselt põlemisprotsessidest, samuti tekivad atmosfääris fotokeemilistel reaktsioonidel jne. Sõltuvat tekkeprotsessist on väga erineva keemilise koostisega ja mitmesuguse mõjuga inimeste tervisele. Linnaõhus sisalduvad eriti peened osakesed pärinevad liiklusest,  koduahjudest ja paljudest muudest allikatest.  Eriti peente osakeste lubatud aastakeskmine sisaldus on 25 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 15
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 10
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Temperatuuride erinevus 2 m ja 8 m vahel",
+    "formula": "T<sub>DIFF08</sub>",
+    "unit": "deg.C",
+    "description": "Temperatuuride erinevus 2 m ja 8 m vahel iseloomustab vertikaalset õhu liikumist. Negatiivse temperatuuride erinevuse korral (T<sub>8m</sub> – T<sub>2m</sub>) on kõrgemal jahedam õhk ja vertikaalne segunemine ei ole takistatud. Positiivse temperatuuride erinevuse puhul on kõrgemal õhk soojem kui maapinna lähedal ja õhu vertikaalne segunemine on pärsitud."
+  },
+  {
+    "id": 26,
+    "name": "Temperatuuride erinevus 8 m ja 22 m vahel",
+    "formula": "T<sub>DIFF22</sub>",
+    "unit": "deg.C",
+    "description": "Temperatuuride erinevus 8 m ja 22 m vahel iseloomustab vertikaalset õhu liikumist. Negatiivse temperatuuride erinevuse korral (T<sub>22m</sub> – T<sub>8m</sub>) on kõrgemal jahedam õhk ja vertikaalne segunemine ei ole takistatud. Positiivse temperatuuride erinevuse puhul on kõrgemal õhk soojem kui maapinna lähedal ja õhu vertikaalne segunemine on pärsitud."
+  },
+  {
+    "id": 27,
+    "name": "Päikesekiirgus",
+    "formula": "RAD",
+    "unit": "W/m2",
+    "description": "Päikesekiirgus on päikeselt lähtuv elektromagnetlainete ja aineosakeste voog. Päikesekiirgust mõõdetakse pidevalt ja ühikuks on W/m<sup>2</sup>."
+  },
+  {
+    "id": 28,
+    "name": "Õhurõhk",
+    "formula": "PRESS",
+    "unit": "hPa",
+    "description": "Õhurõhku mõõdetakse baromeetriga ja seda väljendatakse hektopaskalites (hPa). Õhurõhk on rõhk, mille põhjustab pinnaühiku kohal kuni atmosfääri ülemise piirini ulatuva õhusamba kaal."
+  },
+  {
+    "id": 29,
+    "name": "Õhurõhk",
+    "formula": "PRESS",
+    "unit": "hPa",
+    "description": "Õhurõhku mõõdetakse baromeetriga ja seda väljendatakse hektopaskalites (hPa). Õhurõhk on rõhk, mille põhjustab pinnaühiku kohal kuni atmosfääri ülemise piirini ulatuva õhusamba kaal."
+  },
+  {
+    "id": 30,
+    "name": "Sademed",
+    "formula": "RAIN",
+    "unit": "mm/day",
+    "description": "Sademed on atmosfäärist langev või sadestuv vedel või tahke vesi. Sademeid mõõdetakse pidevalt ja ühikuna kasutatakse millimeetrit tunni kohta."
+  },
+  {
+    "id": 31,
+    "name": "Suhteline õhuniiskus",
+    "formula": "HUM",
+    "unit": "%",
+    "description": "Suhteline õhuniiskus on veeauru osarõhu ja samadel füüsikalistel tingimustel küllastunud veeauru osarõhu suhe. Suhtelist õhuniiskust väljendatakse protsentides. Mida kõrgem on veeauru temperatuur, seda rohkem mahub veeauru ühikulisse ruumalasse. Temperatuuri langemisel, näiteks õhtul, hakkab suhteline õhuniiskus seega suurenema."
+  },
+  {
+    "id": 32,
+    "name": "Suhteline õhuniiskus",
+    "formula": "HUM",
+    "unit": "%",
+    "description": "Suhteline õhuniiskus on veeauru osarõhu ja samadel füüsikalistel tingimustel küllastunud veeauru osarõhu suhe. Suhtelist õhuniiskust väljendatakse protsentides. Mida kõrgem on veeauru temperatuur, seda rohkem mahub veeauru ühikulisse ruumalasse. Temperatuuri langemisel, näiteks õhtul, hakkab suhteline õhuniiskus seega suurenema."
+  },
+  {
+    "id": 33,
+    "name": "Temperatuur",
+    "formula": "TEMP",
+    "unit": "deg.C",
+    "description": "Õhutemperatuuri mõõdetakse pidevalt varjus oleva ja 2 m kõrgusel paikneva termomeetri abil. Õhutemperatuuri mõõdetakse Celsiuse kraadides."
+  },
+  {
+    "id": 34,
+    "name": "Temperatuur",
+    "formula": "TEMP",
+    "unit": "deg.C",
+    "description": "Õhutemperatuuri mõõdetakse pidevalt varjus oleva ja 2 m kõrgusel paikneva termomeetri abil. Õhutemperatuuri mõõdetakse Celsiuse kraadides."
+  },
+  {
+    "id": 37,
+    "name": "Tuule suund 10 m kõrgusel",
+    "formula": "WD<sub>10</sub>",
+    "unit": "Deg °",
+    "description": "Tuule suund näitab seda horisondi punkti, millest tuul masti suunas puhub. Tuule suunda mõõdetakse kraadides (põhi 0 kraadi, lõuna 180 kraadi)."
+  },
+  {
+    "id": 38,
+    "name": "Tuule suund 24 m kõrgusel",
+    "formula": "WD<sub>24</sub>",
+    "unit": "Deg °",
+    "description": "Tuule suund näitab seda horisondi punkti, millest tuul masti suunas puhub. Tuule suunda mõõdetakse kraadides (põhi 0 kraadi, lõuna 180 kraadi)."
+  },
+  {
+    "id": 41,
+    "name": "Tuule kiirus 10 m kõrgusel",
+    "formula": "WS<sub>10</sub>",
+    "unit": "m/s",
+    "description": "Tuule kiirust mõõdetakse ultrahelianemomeetriga 10 m kõrgusel. Tuule tugevuse mõõtühikuks on meetrit sekundis (m/s)"
+  },
+  {
+    "id": 42,
+    "name": "Tuule kiirus 24 m kõrgusel",
+    "formula": "WS<sub>24</sub>",
+    "unit": "m/s",
+    "description": "Tuule kiirust mõõdetakse ultrahelianemomeetriga 24 m kõrgusel. Tuule tugevuse mõõtühikuks on meetrit sekundis (m/s)"
+  },
+  {
+    "id": 64,
+    "name": "Tuule suund 30 m kõrgusel",
+    "formula": "WD<sub>30</s",
+    "unit": "Deg °",
+    "description": "Tuule suund näitab seda horisondi punkti, millest tuul masti suunas puhub. Tuule suunda mõõdetakse kraadides (põhi 0 kraadi, lõuna 180 kraadi)."
+  },
+  {
+    "id": 65,
+    "name": "Tuule kiirus 30 m kõrgusel",
+    "formula": "WS<sub>30</s",
+    "unit": "m/s",
+    "description": "Tuule kiirust mõõdetakse ultrahelianemomeetriga 10 m kõrgusel. Tuule tugevuse mõõtühikuks on meetrit sekundis (m/s)"
+  },
+  {
+    "id": 66,
+    "name": "Temperatuur 10 m kõrgusel",
+    "formula": "TEMP<sub>10<",
+    "unit": "deg.C",
+    "description": "Õhutemperatuuri mõõdetakse pidevalt varjus oleva ja 10 m kõrgusel paikneva termomeetri abil. Õhutemperatuuri mõõdetakse Celsiuse kraadides."
+  },
+  {
+    "id": 67,
+    "name": "Temperatuur 30 m kõrgusel",
+    "formula": "TEMP<sub>30<",
+    "unit": "deg.C",
+    "description": "Õhutemperatuuri mõõdetakse pidevalt varjus oleva ja 30 m kõrgusel paikneva termomeetri abil. Õhutemperatuuri mõõdetakse Celsiuse kraadides."
+  },
+  {
+    "id": 68,
+    "name": "Süsinikdioksiid",
+    "formula": "dry CO2",
+    "unit": "ppm",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 800
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 700
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 600
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 400
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Süsinikdioksiid",
+    "formula": "wet CO2",
+    "unit": "ppm",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 800
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 700
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 600
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 400
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Süsinikdioksiid",
+    "formula": "CO2",
+    "unit": "ppm",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 800
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 700
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 600
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 400
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Metaan",
+    "formula": "CH4",
+    "unit": "ppm",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 4
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 3.5
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 3
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 2.5
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 2
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Dilämmastikoksiid",
+    "formula": "N2O",
+    "unit": "ppm",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 1
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 0.8
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 0.6
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 0.4
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0.2
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Vääveldioksiid",
+    "formula": "SO<sub>2</sub>",
+    "unit": "µg/m3",
+    "description": "Vääveldioksiid eraldub välisõhku valdavalt väävlit sisaldavate kütuste põletamisel. Atmosfääris toimuvate keemiliste reaktsioonide tulemusena muutub väävelhappeks ja sadeneb keskkonda hapestava parameetrina. Pikaajalisel kokkupuutel vääveldioksiidi kõrge kontsentratsiooniga võivad tekkida kopsukahjustused. Kõrge vääveldioksiidi kontsentratsioon sissehingatavas õhus põhjustab bronhide ahenemist ja suurendab lima eritumist. Pikaajaline kokkupuude kahandab kopsufunktsiooni ja kahjustab hingamisteid (sarnane mõju kui kroonilise bronhiidi puhul).",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 1500
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 1000
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 750
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Lämmastikdioksiid",
+    "formula": "NO<sub>2</sub>",
+    "unit": "µg/m3",
+    "description": "Välisõhku satub lämmastikdioksiid põlemisprotsessides kõrgel temperatuuril õhulämmastiku ja hapniku vahelise reaktsiooni tulemusena. Linnakeskkonnas olev lämmastikdioksiid pärineb valdavalt liiklusest, eriti diiselmootoritega autodest. Silmade, nina ja kurgu ärritaja. Võib põhjustada nõrgenenud kopsutalitlust ja suurendada hingamisteede infektsioonide ohtu lastel ja noorukitel. Väga kõrged lämmastikdioksiidi tasemed võivad põhjustada kopsuturset ja hajutatud kopsukahjustusi (diffuse lung injury). Jätkuv kokkupuude kõrgete lämmastikdioksiidi tasemetega põhjustab akuutse või kroonilise bronhiidi teket. Pikaajaline kokkupuude lämmastikdioksiidi madalate kontsentratsioonidega võib põhjustada astmaatikutel bronhide reaktiivsuse suurenemist, kroonilise kopsuobstruktsiooniga inimestel vähenenud kopsutalitlust ja suurendab hingamisteede nakkushaiguste riski, eriti lastel.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 9000
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 5000
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 3000
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 1500
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Süsinikoksiid",
+    "formula": "CO",
+    "unit": "mg/m3",
+    "description": "Süsinikoksiid ehk vingugaas tekib süsinikku sisaldavate kütuste mittetäielikul põlemisel. Linnakeskkonnas pärineb süsinikoksiid peamiselt liiklusest ja ahiküttest. Süsinikoksiidil on tugev mõju inimese ja loomade tervisele. Sissehingamisel seotakse süsinikoksiid vere hemoglobiiniga (moodustub karboksühemoglobiin) hapniku asemel. See vähendab punaste vereliblede võimet transportida hapnikku kudedesse ja eriti südamelihasele ja ajusse.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 15
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 10
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Vesiniksulfiid",
+    "formula": "H<sub>2</sub>S",
+    "unit": "ug/m3",
+    "description": "Vesiniksulfiid on ebameeldiva lõhnaga (mädamuna lõhnaga) gaas, mis tekib bioloogilise materjali anaeroobsel käärimisel (veepuhastusjaamad, põllumajandus jne). Vesiniksulfiidi eraldub välisõhku ka mitmete naftaproduktide (eelkõige raske kütteõli) ja põlevkiviõli laadimisel ja soojendamisel. Välisõhus esinevad tasemed on enamasti madalamad ebasoodsat tervisemõju põhjustavatest tasemetest kuid tingituna ebameeldivast lõhnast mõjub häirivalt. Välisõhus on vesiniksulfiidi maksimaalne lubatud kontsentratsioon 8 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 75
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 25
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 15
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Peened osakesed",
+    "formula": "PM10",
+    "unit": "µg/m3",
+    "description": "Tahked ja vedelad osakesed aerodünaamilise diameetriga alla 10 mikromeetri (0,00001 meetrit). Satuvad välisõhku teekattelt, põlemisprotsessidest jne. Sõltuvat tekkeprotsessist on väga erineva keemilise koostisega ja mitmesuguse mõjuga inimeste tervisele. Linnaõhus sisalduvad peened osakesed pärinevad liiklusest, teekattelt, koduahjudest ja paljudest muudest allikatest. Linnaõhus on suurusjärgus 5-10 µg/m³ peeneid osakesi pärit väljastpoolt linna asuvaid saasteallikaid. Peente osakeste lubatud ööpäevakeskmine sisaldus on 50 µg/m³ ja aastakeskmine sisaldus on 40 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 1000
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 500
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 250
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 100
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Eriti peened osakesed",
+    "formula": "PM25",
+    "unit": "µg/m3",
+    "description": "Tahked ja vedelad osakesed aerodünaamilise diameetriga alla 2,5 mikromeetri (0,0000025 meetrit). Satuvad välisõhku peamiselt põlemisprotsessidest, samuti tekivad atmosfääris fotokeemilistel reaktsioonidel jne. Sõltuvat tekkeprotsessist on väga erineva keemilise koostisega ja mitmesuguse mõjuga inimeste tervisele. Linnaõhus sisalduvad eriti peened osakesed pärinevad liiklusest,  koduahjudest ja paljudest muudest allikatest.  Eriti peente osakeste lubatud aastakeskmine sisaldus on 25 µg/m³.",
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 300
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 150
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 75
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 50
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Must süsinik",
+    "formula": "BC",
+    "unit": "ug/m3",
+    "description": null,
+    "levels": [
+      {
+        "id": 5,
+        "code": "LEVEL_5",
+        "name": "Väga halb",
+        "description": null,
+        "color": "#f13838",
+        "count": null,
+        "limit": 12
+      },
+      {
+        "id": 4,
+        "code": "LEVEL_4",
+        "name": "Halb",
+        "description": null,
+        "color": "#e2791b",
+        "count": null,
+        "limit": 7
+      },
+      {
+        "id": 3,
+        "code": "LEVEL_3",
+        "name": "Keskmine",
+        "description": null,
+        "color": "#efef33",
+        "count": null,
+        "limit": 3
+      },
+      {
+        "id": 2,
+        "code": "LEVEL_2",
+        "name": "Hea",
+        "description": null,
+        "color": "#80c75e",
+        "count": null,
+        "limit": 1
+      },
+      {
+        "id": 1,
+        "code": "LEVEL_1",
+        "name": "Väga hea",
+        "description": null,
+        "color": "#3ab734",
+        "count": null,
+        "limit": 0
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "UV-A kiirgus",
+    "formula": "UV-A",
+    "unit": "W/m2",
+    "description": "<p>L&auml;hi UV kiirgus lainepikkusega&nbsp;380&ndash;315&nbsp;nm</p>"
+  },
+  {
+    "id": 82,
+    "name": "UV-B kiirgus",
+    "formula": "UV-B",
+    "unit": "W/m2",
+    "description": "<p>Kesk UV kiirgus lainepikkusega&nbsp;315&ndash;280&nbsp;nm</p>"
+  }
+]

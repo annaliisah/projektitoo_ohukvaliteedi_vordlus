@@ -1,0 +1,473 @@
+{
+  "features": [
+    {
+      "id": 3,
+      "geometry": {
+        "coordinates": [
+          25.928164,
+          59.515308
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "BACKGROUND",
+        "name": "Lahemaa",
+        "description": "<p>Lahemaa seirejaam paikneb Palmse m&otilde;isast ligikaudu 10 km kaugusel alates 1985 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 609649/6597606. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, eriti peeneid osakesi, gaasilist elavh&otilde;bedat ning elements&uuml;siniku ja orgaanilise s&uuml;siniku sisaldust eriti peente osakeste fraktsioonis. Peente osakeste proovi kogutakse lisaks 168 h jooksul filtritele ja anal&uuml;&uuml;sitakse raskmetallide (As, Cd, Ni, Pb) ja benso(a)p&uuml;reeni sisaldust. Lisaks m&auml;&auml;ratakse gaasifaasis ja osakestel katioonide ja anioonide sisaldust ning gaasifaasis ammoniaagi kontsentratsiooni. Lahemaa seirejaam on &uuml;le-Euroopalise EMEP (European Monitoring and Evaluation Programme) seirev&otilde;rgustikku kuuluv II taseme seirejaam. Lisaks m&otilde;&otilde;detakse seirejaamas meteoroloogilisi n&auml;itajaid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>PM25</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>PM10</td>\r\n\t\t\t<td>Digitel DHA-80</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Gaasiline elavh&otilde;be</td>\r\n\t\t\t<td>Lumex RA-915AM</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>EC/OC PM2.5 fraktsioonis</td>\r\n\t\t\t<td>SunLabs Carbon Aerosol Analysis Field Instrument</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S04",
+        "indicators": [
+          1,
+          3,
+          4,
+          6,
+          13,
+          23,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 9,
+      "geometry": {
+        "coordinates": [
+          21.844596,
+          58.376235
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "BACKGROUND",
+        "name": "Vilsandi",
+        "description": "<p>Vilsandi seirejaam paikneb Saaremaast l&auml;&auml;nes paikneva Vilsandi saare keskosas alates 1994 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 373913/6472665. Vilsandi seirejaam on &uuml;le-Euroopalise EMEP (European Monitoring and Evaluation Programme) seirev&otilde;rgustikku kuuluv I taseme seirejaam. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, osooni ja eriti peeneid osakesi. Lisaks m&otilde;&otilde;detakse seirejaamas meteoroloogilisi n&auml;itajaid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/vilsandi.jpg",
+        "airviro_code": "S09",
+        "indicators": [
+          1,
+          3,
+          6,
+          23,
+          34,
+          37,
+          41,
+          81,
+          82
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 10,
+      "geometry": {
+        "coordinates": [
+          26.503401,
+          58.727153
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "BACKGROUND",
+        "name": "Saarejärve",
+        "description": "<p>Saarej&auml;rve seirejaam paikneb J&otilde;gevamaal Saarej&auml;rve j&auml;rve l&auml;histel alates 1997 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 644977 / 6512430. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, osooni ja eriti peeneid osakesi ning meteoroloogilisi parameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>PM25</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S08",
+        "indicators": [
+          1,
+          3,
+          6,
+          23,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 33,
+      "geometry": {
+        "coordinates": [
+          24.925486,
+          58.52445
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "BACKGROUND",
+        "name": "Tahkuse",
+        "description": "<p>Tahkuse seirejaam paikneb Soomaal alates 1984 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 553919/6487518. Tahkuse &otilde;huseirejaam asutati Tartu &Uuml;likooli keskkonnaf&uuml;&uuml;sika instituudi uurimislaboratooriumi baasil.&nbsp;Tahkuse &otilde;huseirejaam on teostanud pikaajalisi kompleksseid atmosf&auml;&auml;ri f&uuml;&uuml;sikalisi ja keemilisi m&otilde;&otilde;tmisi, et saada statistiliselt kaalukat informatsiooni saasteparameetrite ja nende trendide kohta v&auml;hesaastatud maismaa-piirkonnas.</p>",
+        "image": null,
+        "airviro_code": "S31",
+        "indicators": [
+          1,
+          3,
+          6,
+          11,
+          68,
+          69
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 11,
+      "geometry": {
+        "coordinates": [
+          24.931303,
+          59.493664
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Muuga 1",
+        "description": "<p>Muuga 1 seirejaam on paigaldatud Muuga Sadama l&auml;histele alates 1998 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 553077/6595384. Seirejaam kuulub Muuga Sadama &otilde;hukvaliteedi juhtimiss&uuml;steemi. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega mittemetaanseid s&uuml;sivesinikke, aromaatseid s&uuml;sivesinikke, vesiniksulfiidi ja meteoroloogilisi parameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&Uuml;lds&uuml;sivesinikud</td>\r\n\t\t\t<td>Horiba APHA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aromaatsed s&uuml;sivesinikud</td>\r\n\t\t\t<td>GC955 series 600</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Vesiniksulfiid</td>\r\n\t\t\t<td>APSA-360A/CU-1</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S11",
+        "indicators": [
+          8,
+          11,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 16,
+      "geometry": {
+        "coordinates": [
+          24.066607,
+          59.343843
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Paldiski",
+        "description": "<p>Paldiski seirejaam asub Pakri poolsaarel Alexela k&uuml;tuseterminali l&auml;histel alates 2008 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 503790/6578420. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega mittemetaanseid s&uuml;sivesinikke, aromaatseid s&uuml;sivesinikke ja meteoroloogilisi parameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&Uuml;lds&uuml;sivesinikud</td>\r\n\t\t\t<td>Horiba APHA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aromaatsed s&uuml;sivesinikud</td>\r\n\t\t\t<td>GC955 series 600</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/paldiski.jpg",
+        "airviro_code": "S23",
+        "indicators": [
+          8,
+          14,
+          16,
+          18,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 21,
+      "geometry": {
+        "coordinates": [
+          27.750225,
+          59.40276
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Sillamäe",
+        "description": "<p>Sillam&auml;e seirejaam on paigaldatud Sillam&auml;e linna S&otilde;tke tee algusesse Sillam&auml;e sadama tootmisterritooriumi piirile alates 2014 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 712900/6590933. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega mittemetaansete s&uuml;sivesinike, aromaatsete s&uuml;sivesinike, ammoniaagi ja peente osakeste kontsentratsiooni ning meteoroloogilisi parameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&Uuml;lds&uuml;sivesinikud</td>\r\n\t\t\t<td>Horiba APHA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aromaatsed s&uuml;sivesinikud</td>\r\n\t\t\t<td>GC955 series 600</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ammoniaak</td>\r\n\t\t\t<td>APNA-370A/CU-1</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>PM10/PM25</td>\r\n\t\t\t<td>Palas Fidas</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/sillamae.jpg",
+        "airviro_code": "S30",
+        "indicators": [
+          8,
+          10,
+          11,
+          14,
+          16,
+          18,
+          20,
+          21,
+          23,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 38,
+      "geometry": {
+        "coordinates": [
+          27.870776,
+          59.375311
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Sinimäe",
+        "description": "<p>Sinim&auml;e seirejaam paikneb Sinim&auml;e k&uuml;las, L-Est s&uuml;steemis on 719936 / 6588294. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega v&auml;&auml;veldioksiidi, vesiniksulfiidi, mittemetaanseid&nbsp;s&uuml;sivesinikke, peeneid osakesi ja eriti peeneid osakesi. Lisaks m&otilde;&otilde;detakse seirejaamas meteoparameetreid.</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Vesiniksulfiid</td>\r\n\t\t\t<td>Horiba APSA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>NMHC</td>\r\n\t\t\t<td>Horiba APHA-370</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S32",
+        "indicators": [
+          1,
+          8,
+          11,
+          21,
+          23,
+          31,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 40,
+      "geometry": {
+        "coordinates": [
+          27.244931,
+          59.393961
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "VKG",
+        "description": "<p>VKG seirejaam paikneb VKG tootmisterritooriumi piiril Kohtla-J&auml;rvel. Seirejaama koordinaadid L-Est s&uuml;steemis on 684337/6588445. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega v&auml;&auml;veldioksiidi, vesiniksulfiidi ja meteoroloogilisi parameetreid.</p>",
+        "image": null,
+        "airviro_code": "S18",
+        "indicators": [
+          1,
+          11,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 41,
+      "geometry": {
+        "coordinates": [
+          27.748683,
+          59.39384
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Sillamäe 2",
+        "description": "<p>Sillam&auml;e seirejaam on paigaldatud Sillam&auml;e linna Tolstoi t&auml;navale Sillam&auml;e sadama tootmisterritooriumi piirile alates 2019&nbsp;aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 712881/6589937. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega ammoniaagi sisaldust v&auml;lis&otilde;hus ja meteoroloogilisi parameetreid.</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ammoniaak</td>\r\n\t\t\t<td>APNA-370A/CU-1</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S33",
+        "indicators": [
+          10,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 44,
+      "geometry": {
+        "coordinates": [
+          26.96529,
+          59.355848
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "INDUSTRY",
+        "name": "Kiviõli",
+        "description": "<p>Kivi&otilde;li seirejaam paikneb Kivi&otilde;li linnas aadressil Keskpuiestee 20 ja m&otilde;&otilde;dab v&auml;lis&otilde;hu kvaliteeti 2021 aastast.&nbsp;Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega v&auml;&auml;veldioksiidi, vesiniksulfiidi ja lenduvate orgaaniliste &uuml;hendite sisaldust v&auml;lis&otilde;hus. Lisaks m&otilde;&otilde;detakse seirejaamas meteoparameetreid.</p>",
+        "image": null,
+        "airviro_code": "S34",
+        "indicators": [
+          8,
+          11,
+          21,
+          34,
+          37,
+          41,
+          1
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 1,
+      "geometry": {
+        "coordinates": [
+          27.278662,
+          59.409624
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Kohtla-Järve",
+        "description": "<p>Kohtla-J&auml;rve seirejaam paikneb Kohtla-J&auml;rvel Kalevi t&auml;naval alates 2002 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 686128/6590296. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, peeneid osakesi, vesiniksulfiidi ja ammoniaaki. Lisaks m&otilde;&otilde;detakse seirejaamas meteoparameetreid. Seirejaamas m&auml;&auml;ratakse benseeni ka passiivproovlitega (kahe n&auml;dala keskmine kontsentratsioon). Peente osakeste proovi kogutakse lisaks 24 h jooksul filtritele ja anal&uuml;&uuml;sitakse raskmetallide (As, Cd, Ni, Pb) ja benso(a)p&uuml;reeni sisaldust.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Vesiniksulfiid</td>\r\n\t\t\t<td>Horiba APSA-360A/CU-1</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ammoniaak</td>\r\n\t\t\t<td>Horiba APNA-360/CU-2</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peente osakeste proov</td>\r\n\t\t\t<td>Digitel DHA-80</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benseen</td>\r\n\t\t\t<td>Radiello / TD-100 Markes / Agilent 6890 GC-MS</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Raskmetallide anal&uuml;&uuml;s</td>\r\n\t\t\t<td>Agilent ICP-MS</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benso(a)p&uuml;reeni anal&uuml;&uuml;s</td>\r\n\t\t\t<td>Agilent GC-MS</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S03",
+        "indicators": [
+          11,
+          1,
+          3,
+          4,
+          21,
+          23,
+          6,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 4,
+      "geometry": {
+        "coordinates": [
+          28.200689,
+          59.372201
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Narva",
+        "description": "<p>Narva seirejaam paikneb Narvas Punam&uuml;tsikese lasteaia territooriumil Kreenholmi t&auml;naval alates 2009 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 738671/6589053. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, peeneid osakesi ja eriti peeneid osakesi. Lisaks m&otilde;&otilde;detakse seirejaamas meteoparameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benseen</td>\r\n\t\t\t<td>Radiello / TD-100 Markes / Agilent 6890 GC-MS</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/narva.jpg",
+        "airviro_code": "S25",
+        "indicators": [
+          1,
+          3,
+          4,
+          6,
+          11,
+          21,
+          23,
+          34,
+          37,
+          41
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 5,
+      "geometry": {
+        "coordinates": [
+          24.760456,
+          59.430989
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Liivalaia",
+        "description": "<p>Kesklinna seirejaam paikneb Tallinnas Liivalaia t&auml;naval Stockmanni kaubamaja l&auml;histel alates 2005 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 543160/6588371. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, eriti peente (PM25) ja peente osakeste (PM10) kontsentratsiooni.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/screenshot-2026-03-27-100503.jpg",
+        "airviro_code": "S00",
+        "indicators": [
+          21,
+          23,
+          3,
+          4,
+          6,
+          1,
+          70
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 6,
+      "geometry": {
+        "coordinates": [
+          24.72192,
+          59.445146
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Rahu",
+        "description": "<p>Rahu seirejaam paikneb Tallinnas Koplis alates 2002 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 540568/6590159. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni ja peeneid osakesi.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/rahu.jpg",
+        "airviro_code": "S01",
+        "indicators": [
+          1,
+          3,
+          4,
+          6,
+          21,
+          11
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 7,
+      "geometry": {
+        "coordinates": [
+          24.649744,
+          59.414041
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Õismäe",
+        "description": "<p>&Otilde;ism&auml;e seirejaam paikneb Tallinnas &Otilde;ism&auml;e teel alates 2001 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 536895/6586417. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, peeneid osakesi, eriti peeneid osakesi ja aromaatseid s&uuml;sivesinikke (benseen, tolueen, ks&uuml;leen ja et&uuml;&uuml;lbenseen). Seirejaamas m&auml;&auml;ratakse benseeni ka passiivproovlitega (kahe n&auml;dala keskmine kontsentratsioon). Peente osakeste proovi kogutakse lisaks 24 h jooksul filtritele ja anal&uuml;&uuml;sitakse raskmetallide (As, Cd, Ni, Pb) ja benso(a)p&uuml;reeni sisaldust.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aromaatsed s&uuml;sivesinikud</td>\r\n\t\t\t<td>GC955 series 600</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benseen</td>\r\n\t\t\t<td>Radiello / TD-100 Markes / Agilent 6890 GC-MS</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Raskmetallide anal&uuml;&uuml;s</td>\r\n\t\t\t<td>Agilent ICP-MS</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benso(a)p&uuml;reeni anal&uuml;&uuml;s</td>\r\n\t\t\t<td>Agilent GC-MS</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": "images/stations/oismae.jpg",
+        "airviro_code": "S05",
+        "indicators": [
+          1,
+          3,
+          4,
+          6,
+          21,
+          23
+        ]
+      },
+      "type": "Feature"
+    },
+    {
+      "id": 8,
+      "geometry": {
+        "coordinates": [
+          26.734845,
+          58.370587
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "type": "URBAN",
+        "name": "Tartu",
+        "description": "<p>Tartu seirejaam paikneb Tartus Helika lasteaia territooriumil Kalevi t&auml;naval alates 2008 aastast. Seirejaama koordinaadid L-Est s&uuml;steemis on 659992/6473272. Seirejaamas m&otilde;&otilde;detakse automaatanal&uuml;saatoritega l&auml;mmastikdioksiidi, v&auml;&auml;veldioksiidi, s&uuml;sinikoksiidi, osooni, peeneid osakesi ja eriti peeneid osakesi. Lisaks m&otilde;&otilde;detakse seirejaamas meteoroloogilisi parameetreid.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>M&otilde;&otilde;detav parameeter</th>\r\n\t\t\t<th>Kasutatav anal&uuml;saator</th>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>L&auml;mmastiku oksiidid</td>\r\n\t\t\t<td>Horiba APNA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>V&auml;&auml;veldioksiid</td>\r\n\t\t\t<td>Horiba APSA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Osoon</td>\r\n\t\t\t<td>Horiba APOA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>S&uuml;sinikoksiid</td>\r\n\t\t\t<td>Horiba APMA-360</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Eriti peened osakesed</td>\r\n\t\t\t<td>Met One BAM 1020</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Benseen</td>\r\n\t\t\t<td>Radiello / TD-100 Markes / Agilent 6890 GC-MS</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "image": null,
+        "airviro_code": "S21",
+        "indicators": [
+          21,
+          23,
+          4,
+          3,
+          1,
+          6,
+          37,
+          41,
+          66
+        ]
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
