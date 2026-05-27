@@ -5,7 +5,18 @@
 ## Äriküsimus
 
 Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega? 
-Näidikulaud võiks näidata mõõdetud väärtust, mudelväärtust, nende vahet ja keskmist absoluutset viga.
+Projektis võetakse Eesti Keskkonnauuringute Keskuse(EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks(link: [placeholder panna KKA link kus on kirjeldatud need parameetrid])
+[placeholder md tabel siia]
+Peamised viis õhukvliteedi mõõdikut: 
+-osakesed (PM2.5 ja PM10),
+-troposfääri osoon(O3)
+-lämmastikdioksiid(NO2)
+-vääveldioksiid(SO2)
+
+Samade parameetrite kohta võetakse mudelarvutatud tulemused OpenMeteo API-st, mis koondab CAMS mudelarvutuse tulemusi. Parameetrid talletatakse samade tundide kohta. 
+Andmeid värskendatakse scheduleriga igal täistunnil(võib muutuda olenevalt sellest kuidas andmed päriselt uuenevad). 
+
+Näidikulaual kuvatakse trendidena iga parameetri mõõdetud ja arvutatud väärtused ja õhukvaliteedi indeks valitud ajavahemikus koos nende vahe ja keskmise absoluutveaga(vb ka korrelaatsionikordaja). 
 
  
 ## Mõõdikud
@@ -22,16 +33,7 @@ $$
 
    Siin on $\hat{y}_i$ prognoositud väärtus, $y_i$ mõõdetud väärtus ja $n$ vaatluste arv. Mida väiksem on $MAE$, seda lähemal on mudeli hinnangud tegelikele mõõtmistele.
 
-3. **Keskmine viga / nihe (Bias, Mean Error)**  
-   Bias näitab, kas mudel kipub väärtusi süsteemselt üle või alahindama.
-
-$$
-ME = \frac{1}{n} \sum_{i=1}^{n} \left( \hat{y}_i - y_i \right)
-$$
-
-   Positiivne $ME$ tähendab, et mudel pigem ülehindab, ja negatiivne $ME$ tähendab, et mudel pigem alahindab.
-
-4. **Korrelatsioonikordaja (Pearson $r$)**  
+3. **Korrelatsioonikordaja (Pearson $r$)**  
    Pearsoni korrelatsioonikordaja näitab, kui hästi mudel tabab mõõdetud väärtuste ajas muutumise trendi.
 
 $$
@@ -44,14 +46,14 @@ Täpsustuseks:
 ### Mõõdetud andmed (Eesti seirejaamad, ohuseire.ee)
 
 - Eestis on **17 õhukvaliteedi seirejaama**
-- Mõõdetavad näitajad sõltuvalt jaamast: 
+- Valikusse võetakse jaamad, millel on kõik viis parameetrit olemas
 - Mõõtmiste intervall: **tunnipõhine, reaalajas**.
 - Allikas: `ohuseire.ee` API
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
 - Allikas: **CAMS European air quality forecast / reanalysis** Open-Meteo API kaudu.
-- Saadaval näitajad:
+- Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 
 - Intervall: **tunnipõhised väärtused**.
 - Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid 92 päeva ka `past_days` parameetriga.
 - Päring koordinaatide järgi (jaama lat/lon);  valime lähima ruudustiku punkti.
