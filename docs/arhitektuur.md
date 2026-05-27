@@ -79,14 +79,14 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 ```mermaid
 flowchart LR
-    source[ohuseire.ee API] --> ingest[Sissevõtt]
+    source[ohuseire.ee API] --> ingest[Sissevõtt(Python)]
     source2[Open-Meteo Forecast API] --> ingest
-    ingest --> staging[(staging)]
+    ingest --> staging[(staging(PostgresSQL db)]
     staging --> transform[Transformatsioon]
     transform --> mart[(mart)]
     mart --> dashboard[Näidikulaud]
     mart --> quality[Andmekvaliteedi testid]
-    scheduler[Scheduler] --> ingest
+    scheduler[Scheduler(nt APScheduler)] --> ingest
 ```
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
