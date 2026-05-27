@@ -90,21 +90,21 @@ flowchart LR
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
 
-## Andmebaasi kihid - TODO?
+## Andmebaasi kihid
 
 | Kiht | Roll |
 |------|------|
 | `staging` | Hoiab allika andmeid töötlemata kujul. |
 | `mart` | Hoiab transformeeritud ja ärilogikat sisaldavaid tabeleid. |
 
-## Tööjaotus - TODO
+## Tööjaotus
 
 | Roll | Vastutus | Täitja |
 |------|----------|--------|
 | Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | Liivika/Anna-Liisa |
 | Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | Liivika/Anna-Liisa |
-| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Heigo |
-| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Kristen |
+| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Kristen/Heigo |
+| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Kristen/Heigo |
 
 ## Riskid - TODO 
 
