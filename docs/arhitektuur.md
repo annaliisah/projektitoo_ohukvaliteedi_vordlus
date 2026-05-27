@@ -113,8 +113,6 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 
 ## Riskid
 
-## Riskid
-
 | Risk | Mõju | Maandus |
 |---|---|---|
 | Õhuseire või Open-Meteo API ei vasta / aegub | Mõõte- või prognoosandmeid ei saa värskendada, võrdlus katki | Ingest-skript annab selge veateate ja logib `run_id` kaupa, scheduler proovib hiljem uuesti või töö saab käsitsi uuesti käivitada. |
@@ -124,7 +122,7 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 | Scheduler ei tööta (nt APScheduler ei käivitu või konteiner jookseb kinni) | Andmeid ei värskendata automaatselt, näidikulaud võib näidata vanu väärtusi | Scheduler logib iga käivituse; näidikulaual kuvatakse viimase eduka `run_id` aeg; vajadusel saab pipeline’i käsitsi käivitada. |
 | Andmekvaliteedi probleemid allikas (outlier’id, pikem katkestus jaama tasemel) | MAE ja muud mõõdikud võivad olla moonutatud või tugineda väga vähestele vaatlustele | Mart-kihis arvutatakse iga `(jaam, näitaja)` kohta vaatluste arv ja erindite indikaatorid; kvaliteedikontrolli kihis hoitakse testi tulemusi ja näidikulaual saab filtreerida minimaalse vaatluste arvu järgi. |
 
-## Privaatsus ja turve - TODO
+## Privaatsus ja turve
 
 Projektis ei esine isikuandmeid ega tundlikke andmeid. 
 Andmebaasi paroolid tulevad `.env` failist
