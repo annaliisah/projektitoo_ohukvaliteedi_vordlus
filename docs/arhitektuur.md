@@ -8,10 +8,10 @@ Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegeli
 Projektis võetakse Eesti Keskkonnauuringute Keskuse(EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks(link: [placeholder panna KKA link kus on kirjeldatud need parameetrid])
 [placeholder md tabel siia]
 Peamised viis õhukvliteedi mõõdikut: 
--osakesed (PM2.5 ja PM10),
--troposfääri osoon(O3)
--lämmastikdioksiid(NO2)
--vääveldioksiid(SO2)
+- osakesed (PM2.5 ja PM10),
+- troposfääri osoon(O3)
+- lämmastikdioksiid(NO2)
+- vääveldioksiid(SO2)
 
 Samade parameetrite kohta võetakse mudelarvutatud tulemused OpenMeteo API-st, mis koondab CAMS mudelarvutuse tulemusi. Parameetrid talletatakse samade tundide kohta. 
 Andmeid värskendatakse scheduleriga igal täistunnil(võib muutuda olenevalt sellest kuidas andmed päriselt uuenevad). 
@@ -52,10 +52,10 @@ Täpsustuseks:
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
-- Allikas: **CAMS European air quality forecast / reanalysis** Open-Meteo API kaudu.
-- Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 
+- Allikas: **CAMS European air quality forecast ** Open-Meteo API kaudu.
+- Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 11x11 km ruudustikukastike.
 - Intervall: **tunnipõhised väärtused**.
-- Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid 92 päeva ka `past_days` parameetriga.
+- Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid x päeva ka `past_days` parameetriga (maksimaalselt 92 päeva võimalik). 
 - Päring koordinaatide järgi (jaama lat/lon);  valime lähima ruudustiku punkti.
 
 ### Mida millega võrrelda
@@ -79,7 +79,8 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 ```mermaid
 flowchart LR
-    source[Andmeallikas] --> ingest[Sissevõtt]
+    source[ohuseire.ee API] --> ingest[Sissevõtt]
+    source2[Open-Meteo Forecast API] --> ingest
     ingest --> staging[(staging)]
     staging --> transform[Transformatsioon]
     transform --> mart[(mart)]
