@@ -1,0 +1,10 @@
+id
+type
+geometry.coordinates
+geometry.type
+properties.type
+properties.name
+properties.description
+properties.image
+properties.airviro_code
+properties.indicators
