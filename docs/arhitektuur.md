@@ -1,22 +1,24 @@
 # Arhitektuur
 
-> **Juhend:** See fail on projektitöö esimese nädala väljund. Asenda kõik nurksulgudes plankid oma projekti tegeliku sisuga. Kustuta see juhendrida.
-
 ## Äriküsimus
 
 Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega? 
-Projektis võetakse Eesti Keskkonnauuringute Keskuse(EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks(link: [placeholder panna KKA link kus on kirjeldatud need parameetrid])
-[placeholder md tabel siia]
-Peamised viis õhukvliteedi mõõdikut: 
-- osakesed (PM2.5 ja PM10),
-- troposfääri osoon(O3)
-- lämmastikdioksiid(NO2)
-- vääveldioksiid(SO2)
+Projektis võetakse Eesti Keskkonnauuringute Keskuse (EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks (link: [Keskkonnaportaal EESTI ÕHUKVALITEEDI ÜLEVAADE](https://keskkonnaportaal.ee/sites/default/files/Teemad/Välisõhk/Õhuaruanne%202022.pdf))
 
-Samade parameetrite kohta võetakse mudelarvutatud tulemused OpenMeteo API-st, mis koondab CAMS mudelarvutuse tulemusi. Parameetrid talletatakse samade tundide kohta. 
+<img width="1217" height="377" alt="image" src="https://github.com/user-attachments/assets/813e84de-1feb-4c69-948a-95c36789ed3d" />
+
+Allikas: [Keskkonnaportaal EESTI ÕHUKVALITEEDI ÜLEVAADE](https://keskkonnaportaal.ee/sites/default/files/Teemad/Välisõhk/Õhuaruanne%202022.pdf)
+
+Peamised viis õhukvaliteedi mõõdikut: 
+- osakesed (PM<sub>2.5</sub> ja PM<sub>10</sub>),
+- troposfääri osoon (O<sub>3</sub>)
+- lämmastikdioksiid (NO<sub>2</sub>)
+- vääveldioksiid (SO<sub>2</sub>)
+
+Samade parameetrite kohta võetakse mudelarvutatud tulemused Open-Meteo API-st, mis koondab CAMS mudelarvutuse tulemusi. Parameetrid talletatakse samade tundide kohta. 
 Andmeid värskendatakse scheduleriga igal täistunnil(võib muutuda olenevalt sellest kuidas andmed päriselt uuenevad). 
 
-Näidikulaual kuvatakse trendidena iga parameetri mõõdetud ja arvutatud väärtused ja õhukvaliteedi indeks valitud ajavahemikus koos nende vahe ja keskmise absoluutveaga(vb ka korrelaatsionikordaja). 
+Näidikulaual kuvatakse trendidena iga parameetri mõõdetud ja arvutatud väärtused ja õhukvaliteedi indeks valitud ajavahemikus koos nende vahe ja keskmise absoluutveaga (vb ka korrelatsioonikordaja). 
 
  
 ## Mõõdikud
@@ -92,9 +94,10 @@ flowchart LR
 
 mart kihis kasutatakse dimensioon- ja faktitabelite loogikat. Dimensioonitabelid mart.dim_station, mart.dim_indicator ja mart.dim_time hoiavad jaamade, näitajate ja aja kirjeldavat infot, faktitabelid aga ajas muutuvaid väärtusi.
 
-Peamine faktitabel on mart.fact_air_quality_observation, mille grain on üks rida ühe (station_id, indicator_id, ts_hour, observation_type) kohta. Selles tabelis hoitakse nii mõõdetud kui prognoositud tunniväärtusi; veerg observation_type eristab, kas tegemist on mõõdetud (measured) või prognoositud (forecast) väärtusega.
+Peamine faktitabel on mart.fact_air_quality_observation, mille granulaarsus on üks rida ühe (station_id, indicator_id, ts_hour, observation_type) kohta. Selles tabelis hoitakse nii mõõdetud kui prognoositud tunniväärtusi; veerg observation_type eristab, kas tegemist on mõõdetud (measured) või prognoositud (forecast) väärtusega.
 
 Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality_comparison, mille granulaarsus on üks rida ühe (station_id, indicator_id, ts_hour) kohta. Selles tabelis on samal real measured_value ja forecast_value, mille põhjal arvutatakse vahe, absoluutviga ja soovi korral muud võrdlusmõõdikud näidikulaua jaoks.
+
 ## Andmebaasi kihid
 
 | Kiht | Roll |
@@ -125,4 +128,5 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 ## Privaatsus ja turve
 
 Projektis ei esine isikuandmeid ega tundlikke andmeid. 
-Andmebaasi paroolid tulevad `.env` failist
+
+Andmebaasi paroolid tulevad `.env` failist.
