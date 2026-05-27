@@ -75,7 +75,7 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 <!-- *- Open-Meteo Air Quality API annab CAMS mudelipõhiseid õhukvaliteedi andmeid. past_days võimaldab küsida kuni 92 päeva tagasi ja start_date / end_date kaudu saab küsida ajaloolist CAMS reanalüüsi. Ohuseire.ee annab Eesti seirejaamade mõõteandmeid JSON-kujul, näiteks jaamad https://www.ohuseire.ee/api/station/et?type=INDICATOR, näitajad https://www.ohuseire.ee/api/indicator/et?type=INDICATOR ja mõõtmised https://www.ohuseire.ee/api/monitoring/et?....* -->
 
-## Andmevoog - TODO 
+## Andmevoog 
 
 ```mermaid
 flowchart LR
@@ -111,7 +111,7 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 | Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Kristen/Heigo |
 | Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Kristen/Heigo |
 
-## Riskid - TODO 
+## Riskid
 
 ## Riskid
 
