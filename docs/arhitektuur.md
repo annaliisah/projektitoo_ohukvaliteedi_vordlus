@@ -79,7 +79,7 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 ```mermaid
 flowchart LR
-    source[ohuseire.ee API] --> ingest[Sissevõtt(Python)]
+    source[ohuseire.ee API] --> ingest[Sissevõtt]
     source2[Open-Meteo Forecast API] --> ingest
     ingest --> staging[(staging(PostgresSQL db)]
     staging --> transform[Transformatsioon]
