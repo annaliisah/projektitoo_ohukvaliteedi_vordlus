@@ -113,11 +113,16 @@ Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality
 
 ## Riskid - TODO 
 
+## Riskid
+
 | Risk | Mõju | Maandus |
-|------|------|---------|
-| API ei vasta | Mõõteandmed ei tule üle |  |
-| API andmeväljad või struktuur muutuvad | [Mis juhtub?] | [Kuidas maandad?] |
-| [Risk 3] | [Mis juhtub?] | [Kuidas maandad?] |
+|---|---|---|
+| Õhuseire või Open-Meteo API ei vasta / aegub | Mõõte- või prognoosandmeid ei saa värskendada, võrdlus katki | Ingest-skript annab selge veateate ja logib `run_id` kaupa, scheduler proovib hiljem uuesti või töö saab käsitsi uuesti käivitada. |
+| Õhuseire / Open-Meteo API andmeskeem muutub (väljade nimed, ühikud) | Laadimine katkeb või arvutused muutuvad valeks (valed ühikud, segased parameetrid) | Staging-kihi laadimisel on skeemi ja ühiku kontrollid, muudatuse korral katkestatakse töövoog, mitte ei kirjutata mart’i vales formaadis andmeid. |
+| Mõõdetud ja prognoositud väärtused ei joondu samale tunnile (puuduvad tunnid, nihked ajavööndis) | Võrdlustabelis tekivad valed või ebapiisavad võrdluspaarid, näidikud on eksitavad | Mart-kihis on join `(station_id, indicator_id, ts_hour)` alusel; laadimise järel jooksevad kvaliteeditestid, mis kontrollivad ühiste tundide osakaalu ja raporteerivad aukude osakaalu. |
+| Õhukvaliteedi näitajate valik või indeksivalem muutub projekti keskel | Uued raportid ei ole vanadega võrreldavad, MAE ja indeksid muutuvad tõlgendamatuks | Indikaatorite ja indeksivalemi versioon hoitakse `dim_indicator` / eraldi konfiguratsioonis; mart’is on versiooniveerg, mille alusel saab vajadusel filtreerida ainult viimase versiooni andmeid. |
+| Scheduler ei tööta (nt APScheduler ei käivitu või konteiner jookseb kinni) | Andmeid ei värskendata automaatselt, näidikulaud võib näidata vanu väärtusi | Scheduler logib iga käivituse; näidikulaual kuvatakse viimase eduka `run_id` aeg; vajadusel saab pipeline’i käsitsi käivitada. |
+| Andmekvaliteedi probleemid allikas (outlier’id, pikem katkestus jaama tasemel) | MAE ja muud mõõdikud võivad olla moonutatud või tugineda väga vähestele vaatlustele | Mart-kihis arvutatakse iga `(jaam, näitaja)` kohta vaatluste arv ja erindite indikaatorid; kvaliteedikontrolli kihis hoitakse testi tulemusi ja näidikulaual saab filtreerida minimaalse vaatluste arvu järgi. |
 
 ## Privaatsus ja turve - TODO
 
