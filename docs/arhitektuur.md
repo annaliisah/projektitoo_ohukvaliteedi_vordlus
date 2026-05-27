@@ -43,15 +43,15 @@ $$
 Täpsustuseks:
 ### Mõõdetud andmed (Eesti seirejaamad, ohuseire.ee)
 
-- Eestis on **9 riiklikku õhukvaliteedi seirejaama** (+ ettevõtete seirejaamad).
-- Mõõdetavad näitajad sõltuvalt jaamast: **SO₂, NO₂, NOx, CO, O₃, PM10, PM2.5, H₂S, benseen, fenool, formaldehüüd**, mõnes jaamas on ka ilmastikuparameetreid.
+- Eestis on **17 õhukvaliteedi seirejaama**
+- Mõõdetavad näitajad sõltuvalt jaamast: 
 - Mõõtmiste intervall: **tunnipõhine, reaalajas**.
 - Allikas: `ohuseire.ee` API
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
 - Allikas: **CAMS European air quality forecast / reanalysis** Open-Meteo API kaudu.
-- Saadaval näitajad: **PM10, PM2.5, CO, NO₂, SO₂, O₃**, aerosoolide optiline paksus(?) ja õietolm.
+- Saadaval näitajad:
 - Intervall: **tunnipõhised väärtused**.
 - Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid 92 päeva ka `past_days` parameetriga.
 - Päring koordinaatide järgi (jaama lat/lon);  valime lähima ruudustiku punkti.
