@@ -5,7 +5,18 @@
 ## Äriküsimus
 
 Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega? 
-Näidikulaud võiks näidata mõõdetud väärtust, mudelväärtust, nende vahet ja keskmist absoluutset viga.
+Projektis võetakse Eesti Keskkonnauuringute Keskuse(EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks(link: [placeholder panna KKA link kus on kirjeldatud need parameetrid])
+[placeholder md tabel siia]
+Peamised viis õhukvliteedi mõõdikut: 
+- osakesed (PM2.5 ja PM10),
+- troposfääri osoon(O3)
+- lämmastikdioksiid(NO2)
+- vääveldioksiid(SO2)
+
+Samade parameetrite kohta võetakse mudelarvutatud tulemused OpenMeteo API-st, mis koondab CAMS mudelarvutuse tulemusi. Parameetrid talletatakse samade tundide kohta. 
+Andmeid värskendatakse scheduleriga igal täistunnil(võib muutuda olenevalt sellest kuidas andmed päriselt uuenevad). 
+
+Näidikulaual kuvatakse trendidena iga parameetri mõõdetud ja arvutatud väärtused ja õhukvaliteedi indeks valitud ajavahemikus koos nende vahe ja keskmise absoluutveaga(vb ka korrelaatsionikordaja). 
 
  
 ## Mõõdikud
@@ -22,16 +33,7 @@ $$
 
    Siin on $\hat{y}_i$ prognoositud väärtus, $y_i$ mõõdetud väärtus ja $n$ vaatluste arv. Mida väiksem on $MAE$, seda lähemal on mudeli hinnangud tegelikele mõõtmistele.
 
-3. **Keskmine viga / nihe (Bias, Mean Error)**  
-   Bias näitab, kas mudel kipub väärtusi süsteemselt üle või alahindama.
-
-$$
-ME = \frac{1}{n} \sum_{i=1}^{n} \left( \hat{y}_i - y_i \right)
-$$
-
-   Positiivne $ME$ tähendab, et mudel pigem ülehindab, ja negatiivne $ME$ tähendab, et mudel pigem alahindab.
-
-4. **Korrelatsioonikordaja (Pearson $r$)**  
+3. **Korrelatsioonikordaja (Pearson $r$)**  
    Pearsoni korrelatsioonikordaja näitab, kui hästi mudel tabab mõõdetud väärtuste ajas muutumise trendi.
 
 $$
@@ -43,17 +45,17 @@ $$
 Täpsustuseks:
 ### Mõõdetud andmed (Eesti seirejaamad, ohuseire.ee)
 
-- Eestis on **9 riiklikku õhukvaliteedi seirejaama** (+ ettevõtete seirejaamad).
-- Mõõdetavad näitajad sõltuvalt jaamast: **SO₂, NO₂, NOx, CO, O₃, PM10, PM2.5, H₂S, benseen, fenool, formaldehüüd**, mõnes jaamas on ka ilmastikuparameetreid.
+- Eestis on **17 õhukvaliteedi seirejaama**
+- Valikusse võetakse jaamad, millel on kõik viis parameetrit olemas
 - Mõõtmiste intervall: **tunnipõhine, reaalajas**.
 - Allikas: `ohuseire.ee` API
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
-- Allikas: **CAMS European air quality forecast / reanalysis** Open-Meteo API kaudu.
-- Saadaval näitajad: **PM10, PM2.5, CO, NO₂, SO₂, O₃**, aerosoolide optiline paksus(?) ja õietolm.
+- Allikas: **CAMS European air quality forecast ** Open-Meteo API kaudu.
+- Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 11x11 km ruudustikukastike.
 - Intervall: **tunnipõhised väärtused**.
-- Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid 92 päeva ka `past_days` parameetriga.
+- Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid x päeva ka `past_days` parameetriga (maksimaalselt 92 päeva võimalik). 
 - Päring koordinaatide järgi (jaama lat/lon);  valime lähima ruudustiku punkti.
 
 ### Mida millega võrrelda
@@ -66,8 +68,6 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| [Andmeallika nimi] | [API / fail / andmebaas] | Jah, [iga tund / päevas / muu] | Põhiandmevoog |
-| [Teise allika nimi] | [seed / dim-tabel] | Ei, staatiline | Kõrvaltabel |
 | Open-Meteo Air Quality API | API | Jah, iga tund | Mudelprognooside põhiandmevoog |
 | Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised |
 | Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
@@ -75,45 +75,54 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 <!-- *- Open-Meteo Air Quality API annab CAMS mudelipõhiseid õhukvaliteedi andmeid. past_days võimaldab küsida kuni 92 päeva tagasi ja start_date / end_date kaudu saab küsida ajaloolist CAMS reanalüüsi. Ohuseire.ee annab Eesti seirejaamade mõõteandmeid JSON-kujul, näiteks jaamad https://www.ohuseire.ee/api/station/et?type=INDICATOR, näitajad https://www.ohuseire.ee/api/indicator/et?type=INDICATOR ja mõõtmised https://www.ohuseire.ee/api/monitoring/et?....* -->
 
-## Andmevoog - TODO 
+## Andmevoog 
 
 ```mermaid
 flowchart LR
-    source[Andmeallikas] --> ingest[Sissevõtt]
-    ingest --> staging[(staging)]
+    source3[Staatilised andmed e asukohad] --> ingest
+    source2[Open-Meteo Forecast API] --> ingest
+    source[ohuseire.ee API] --> ingest[Sissevõtt]
+    ingest --> staging[(staging PostgresSQL db)]
     staging --> transform[Transformatsioon]
     transform --> mart[(mart)]
     mart --> dashboard[Näidikulaud]
     mart --> quality[Andmekvaliteedi testid]
-    scheduler[Scheduler] --> ingest
+    scheduler[Scheduler nt APScheduler ] --> ingest
 ```
 
-> Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
+mart kihis kasutatakse dimensioon- ja faktitabelite loogikat. Dimensioonitabelid mart.dim_station, mart.dim_indicator ja mart.dim_time hoiavad jaamade, näitajate ja aja kirjeldavat infot, faktitabelid aga ajas muutuvaid väärtusi.
 
-## Andmebaasi kihid - TODO?
+Peamine faktitabel on mart.fact_air_quality_observation, mille grain on üks rida ühe (station_id, indicator_id, ts_hour, observation_type) kohta. Selles tabelis hoitakse nii mõõdetud kui prognoositud tunniväärtusi; veerg observation_type eristab, kas tegemist on mõõdetud (measured) või prognoositud (forecast) väärtusega.
+
+Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality_comparison, mille granulaarsus on üks rida ühe (station_id, indicator_id, ts_hour) kohta. Selles tabelis on samal real measured_value ja forecast_value, mille põhjal arvutatakse vahe, absoluutviga ja soovi korral muud võrdlusmõõdikud näidikulaua jaoks.
+## Andmebaasi kihid
 
 | Kiht | Roll |
 |------|------|
 | `staging` | Hoiab allika andmeid töötlemata kujul. |
 | `mart` | Hoiab transformeeritud ja ärilogikat sisaldavaid tabeleid. |
 
-## Tööjaotus - TODO
+## Tööjaotus
 
 | Roll | Vastutus | Täitja |
 |------|----------|--------|
-| Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | [Nimi] |
-| Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | [Nimi] |
-| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | [Nimi] |
-| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | [Nimi] |
+| Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | Liivika/Anna-Liisa |
+| Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | Liivika/Anna-Liisa |
+| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Kristen/Heigo |
+| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Kristen/Heigo |
 
-## Riskid - TODO 
+## Riskid
 
 | Risk | Mõju | Maandus |
-|------|------|---------|
-| [Risk 1 — näiteks: API ei vasta] | [Mis juhtub?] | [Kuidas maandad?] |
-| [Risk 2] | [Mis juhtub?] | [Kuidas maandad?] |
-| [Risk 3] | [Mis juhtub?] | [Kuidas maandad?] |
+|---|---|---|
+| Õhuseire või Open-Meteo API ei vasta / aegub | Mõõte- või prognoosandmeid ei saa värskendada, võrdlus katki | Ingest-skript annab selge veateate ja logib `run_id` kaupa, scheduler proovib hiljem uuesti või töö saab käsitsi uuesti käivitada. |
+| Õhuseire / Open-Meteo API andmeskeem muutub (väljade nimed, ühikud) | Laadimine katkeb või arvutused muutuvad valeks (valed ühikud, segased parameetrid) | Staging-kihi laadimisel on skeemi ja ühiku kontrollid, muudatuse korral katkestatakse töövoog, mitte ei kirjutata mart’i vales formaadis andmeid. |
+| Mõõdetud ja prognoositud väärtused ei joondu samale tunnile (puuduvad tunnid, nihked ajavööndis) | Võrdlustabelis tekivad valed või ebapiisavad võrdluspaarid, näidikud on eksitavad | Mart-kihis on join `(station_id, indicator_id, ts_hour)` alusel; laadimise järel jooksevad kvaliteeditestid, mis kontrollivad ühiste tundide osakaalu ja raporteerivad aukude osakaalu. |
+| Õhukvaliteedi näitajate valik või indeksivalem muutub projekti keskel | Uued raportid ei ole vanadega võrreldavad, MAE ja indeksid muutuvad tõlgendamatuks | Indikaatorite ja indeksivalemi versioon hoitakse `dim_indicator` / eraldi konfiguratsioonis; mart’is on versiooniveerg, mille alusel saab vajadusel filtreerida ainult viimase versiooni andmeid. |
+| Scheduler ei tööta (nt APScheduler ei käivitu või konteiner jookseb kinni) | Andmeid ei värskendata automaatselt, näidikulaud võib näidata vanu väärtusi | Scheduler logib iga käivituse; näidikulaual kuvatakse viimase eduka `run_id` aeg; vajadusel saab pipeline’i käsitsi käivitada. |
+| Andmekvaliteedi probleemid allikas (outlier’id, pikem katkestus jaama tasemel) | MAE ja muud mõõdikud võivad olla moonutatud või tugineda väga vähestele vaatlustele | Mart-kihis arvutatakse iga `(jaam, näitaja)` kohta vaatluste arv ja erindite indikaatorid; kvaliteedikontrolli kihis hoitakse testi tulemusi ja näidikulaual saab filtreerida minimaalse vaatluste arvu järgi. |
 
-## Privaatsus ja turve - TODO
+## Privaatsus ja turve
 
-[Kirjelda, millised isiku- või tundlikud andmed teie projektis esinevad (kui üldse) ja kuidas neid kaitsete. Isikuandmed peavad olema anonümiseeritud. Andmebaasi paroolid peavad tulema `.env` failist.]
+Projektis ei esine isikuandmeid ega tundlikke andmeid. 
+Andmebaasi paroolid tulevad `.env` failist
