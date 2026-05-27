@@ -90,8 +90,11 @@ flowchart LR
     scheduler[Scheduler nt APScheduler ] --> ingest
 ```
 
-> Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
+mart kihis kasutatakse dimensioon- ja faktitabelite loogikat. Dimensioonitabelid mart.dim_station, mart.dim_indicator ja mart.dim_time hoiavad jaamade, näitajate ja aja kirjeldavat infot, faktitabelid aga ajas muutuvaid väärtusi.
 
+Peamine faktitabel on mart.fact_air_quality_observation, mille grain on üks rida ühe (station_id, indicator_id, ts_hour, observation_type) kohta. Selles tabelis hoitakse nii mõõdetud kui prognoositud tunniväärtusi; veerg observation_type eristab, kas tegemist on mõõdetud (measured) või prognoositud (forecast) väärtusega.
+
+Võrdluseks luuakse eraldi tuletatud faktitabel või vaade mart.fact_air_quality_comparison, mille granulaarsus on üks rida ühe (station_id, indicator_id, ts_hour) kohta. Selles tabelis on samal real measured_value ja forecast_value, mille põhjal arvutatakse vahe, absoluutviga ja soovi korral muud võrdlusmõõdikud näidikulaua jaoks.
 ## Andmebaasi kihid
 
 | Kiht | Roll |
