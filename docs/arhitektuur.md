@@ -66,8 +66,6 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| [Andmeallika nimi] | [API / fail / andmebaas] | Jah, [iga tund / päevas / muu] | Põhiandmevoog |
-| [Teise allika nimi] | [seed / dim-tabel] | Ei, staatiline | Kõrvaltabel |
 | Open-Meteo Air Quality API | API | Jah, iga tund | Mudelprognooside põhiandmevoog |
 | Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised |
 | Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
