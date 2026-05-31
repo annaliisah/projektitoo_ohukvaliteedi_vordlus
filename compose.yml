@@ -2,7 +2,7 @@
 # Käivitamine:                docker compose up -d --build
 # Peatamine:                  docker compose down
 # Täielik puhastus (andmed):  docker compose down -v
-# Logide vaatamine:           docker compose logs -f db
+# Logide vaatamine:           docker compose logs -f pipeline
 
 services:
 
@@ -26,6 +26,54 @@ services:
       interval: 10s
       retries: 5
       start_period: 10s
+    restart: unless-stopped
+
+  # Pipeline (cron + start-up run)
+  pipeline:
+    build: .
+    container_name: ohukvaliteet-pipeline
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+    volumes:
+      - ./scripts:/app/scripts:ro
+    command: >
+      bash -c "
+        apt-get update -qq && apt-get install -y -qq postgresql-client cron > /dev/null 2>&1 &&
+        if [ \"$${RUN_ON_STARTUP:-true}\" = \"true\" ]; then
+          bash /app/scripts/run_pipeline.sh 2>&1 | tee -a /var/log/pipeline.log || true;
+        fi &&
+        echo \"$${PIPELINE_CRON:-0 * * * *} cd /app && bash /app/scripts/run_pipeline.sh >> /var/log/pipeline.log 2>&1\" > /etc/cron.d/pipeline &&
+        chmod 0644 /etc/cron.d/pipeline &&
+        crontab /etc/cron.d/pipeline &&
+        cron &&
+        tail -f /var/log/pipeline.log
+      "
+    restart: unless-stopped
+
+  # Streamlit dashboard
+  dashboard:
+    build: .
+    container_name: ohukvaliteet-dashboard
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+    ports:
+      - "${DASHBOARD_PORT_HOST:-8501}:8501"
+    command: >
+      streamlit run dashboard/app.py
+      --server.port=8501
+      --server.address=0.0.0.0
+      --server.headless=true
+      --browser.gatherUsageStats=false
     restart: unless-stopped
 
 volumes:
