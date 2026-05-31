@@ -11,9 +11,18 @@ load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 
 def _conninfo() -> str:
+    # Dockeri sees: DB_HOST=db, DB_PORT=5432
+    # Lokaalselt:   DB_HOST puudub -> localhost, DB_PORT puudub -> kasutame DB_PORT_HOST
+    host = os.environ.get("DB_HOST", "localhost")
+    if "DB_PORT" in os.environ:
+        port = os.environ["DB_PORT"]
+    elif host == "localhost":
+        port = os.environ.get("DB_PORT_HOST", "55432")
+    else:
+        port = "5432"
     return (
-        f"host={os.environ.get('DB_HOST', 'localhost')} "
-        f"port={os.environ.get('DB_PORT_HOST', '55432')} "
+        f"host={host} "
+        f"port={port} "
         f"dbname={os.environ['POSTGRES_DB']} "
         f"user={os.environ['POSTGRES_USER']} "
         f"password={os.environ['POSTGRES_PASSWORD']}"
@@ -36,13 +45,7 @@ def get_conn():
 
 @contextmanager
 def pipeline_run(source: str, params: dict | None = None):
-    """Logib jooksu staging.pipeline_runs-i. Yield-ib (conn, run_id, set_rows).
-
-    Kasutus:
-        with pipeline_run("ohuseire_monitoring", {...}) as (conn, run_id, set_rows):
-            ...
-            set_rows(n)
-    """
+    """Logib jooksu staging.pipeline_runs-i. Yield-ib (conn, run_id, set_rows)."""
     conn = psycopg.connect(_conninfo())
     rows = {"n": 0}
 
