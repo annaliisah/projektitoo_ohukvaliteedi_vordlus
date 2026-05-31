@@ -1,9 +1,38 @@
+# Saladused
 .env
+.env.local
+.env.*.local
+
+# Python
 __pycache__/
-.pytest_cache/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Logid
 *.log
+logs/
+
+# Streamlit / dbt
 .streamlit/
 target/
 dbt_packages/
-logs/
+
+# Andmed (ei lähe Githubi)
+data/staging/**/*.json
+data/staging/**/*.csv
+data/staging/**/*.parquet
+data/processed/**/*.csv
+data/processed/**/*.parquet
+
+# Docker volume mahud (kui kogemata projektikaustas)
+pgdata/
+
+# VS Code / OS prügi
+.vscode/
+.DS_Store
+Thumbs.db
