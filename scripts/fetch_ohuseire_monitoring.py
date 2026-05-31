@@ -1,13 +1,19 @@
-"""Tõmba ohuseire mõõtmised viimase LOAD_DAYS päeva kohta staging-sse."""
+"""Tõmba ohuseire mõõtmised viimase LOAD_DAYS päeva kohta staging-sse.
+
+Ohuseire API tagastab measured-välja Eesti kohalikus ajas (Europe/Tallinn)
+ilma timezone-i infota. Konverteerime UTC-sse enne salvestamist."""
 import json
 import os
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 
 from scripts.pipeline.db import get_conn, pipeline_run
 
 URL = "https://www.ohuseire.ee/api/monitoring/et"
+TALLINN = ZoneInfo("Europe/Tallinn")
+UTC = ZoneInfo("UTC")
 
 INSERT_SQL = """
     INSERT INTO staging.ohuseire_monitoring_raw
@@ -15,6 +21,12 @@ INSERT_SQL = """
     VALUES (%s, %s, %s, %s, %s, %s::jsonb)
     ON CONFLICT DO NOTHING
 """
+
+
+def parse_measured(s: str) -> datetime:
+    """'2026-05-31 15:00:00' (Eesti aeg) -> UTC datetime."""
+    naive = datetime.strptime(s, "%Y-%m-%d %H:%M:%S")
+    return naive.replace(tzinfo=TALLINN).astimezone(UTC)
 
 
 def fetch(station_id: int, indicator_id: int,
@@ -31,7 +43,7 @@ def fetch(station_id: int, indicator_id: int,
 
 def main():
     days = int(os.environ.get("LOAD_DAYS", "7"))
-    end = datetime.now()
+    end = datetime.now(TALLINN)
     start = end - timedelta(days=days)
 
     with get_conn() as conn, conn.cursor() as cur:
@@ -57,7 +69,8 @@ def main():
                 for iid in indicator_ids:
                     items = fetch(sid, iid, start, end)
                     rows = [
-                        (run_id, sid, iid, item["measured"],
+                        (run_id, sid, iid,
+                         parse_measured(item["measured"]),
                          item.get("value"), json.dumps(item))
                         for item in items
                     ]
