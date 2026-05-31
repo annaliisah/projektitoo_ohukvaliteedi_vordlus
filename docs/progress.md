@@ -16,12 +16,16 @@
 
 ## Järgmised sammud
 
-- [Esimene tegevus, mis ees ootab]
-- [Teine tegevus]
-- [Kolmas tegevus]
+- pipeline ühtlustada
+- kvaliteedikontrolli ja transformatsiooni skripte täiendada
+- lisada paar seirejaama juurde
+- lisada pikema ajavahemiku ajalugu
+- README ja kasutusjuhend lõpetada
+
 
 ## Mis takistab
 
+- blokeerivaid probleeme ei ole (peale ajapuuduse), tuleb edasi pingutada
 - [Probleem 1 — näiteks: API tagastab vigaseid väärtusi ühes linnas]
 - [Probleem 2 — või: "Praegu pole blokeerivaid probleeme"]
 
@@ -32,7 +36,12 @@ Käsk, millega saab kontrollida, et töövoog töötab:
 ```bash
 # [Lisa siia käsk, mis näitab, et andmed liiguvad allikast näidikulauani]
 # Näiteks:
-docker compose exec pipeline python scripts/run_pipeline.py check
+cp .env.example .env
+docker compose up -d --build
+# oota ~30 sek
+docker compose logs pipeline --tail 20
+# ava http://localhost:8501
+
 ```
 
 Oodatav tulemus: [Kirjelda, mida töötav süsteem väljastab]
