@@ -1,7 +1,12 @@
 -- Transform staging -> mart.fact_air_quality_observation
 -- Idempotentne: ON CONFLICT DO UPDATE värskema source_run_id-ga.
+--
+-- Andmete korrastamine:
+--   measured: väikesed negatiivsed väärtused (-0.5..0) on mõõteinstrumendi
+--   nullpunkti müra; clip-ime 0-ks. Suuremad negatiivsed jäävad alles ja
+--   quality test annab nendest teada.
 
---Mõõdetud (ohuseire) -> 'measured'
+-- 1) Mõõdetud (ohuseire) -> 'measured'
 INSERT INTO mart.fact_air_quality_observation
     (station_id, indicator_id, ts_hour, observation_type, value, source_run_id)
 SELECT
@@ -9,7 +14,11 @@ SELECT
     m.indicator_id,
     date_trunc('hour', m.measured_at) AS ts_hour,
     'measured' AS observation_type,
-    m.value,
+    CASE
+        WHEN m.value IS NULL THEN NULL
+        WHEN m.value < 0 AND m.value >= -0.5 THEN 0
+        ELSE m.value
+    END AS value,
     m.run_id AS source_run_id
 FROM staging.ohuseire_monitoring_raw m
 WHERE m.run_id = (
@@ -21,8 +30,7 @@ DO UPDATE SET
     value = EXCLUDED.value,
     source_run_id = EXCLUDED.source_run_id;
 
---Prognoositud (Open-Meteo) -> 'forecast'
--- Liidame dim_indicator-iga, et openmeteo_code (nt 'pm2_5') -> indicator_id (23)
+-- 2) Prognoositud (Open-Meteo) -> 'forecast'
 INSERT INTO mart.fact_air_quality_observation
     (station_id, indicator_id, ts_hour, observation_type, value, source_run_id)
 SELECT
