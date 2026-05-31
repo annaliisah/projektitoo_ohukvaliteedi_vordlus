@@ -13,7 +13,7 @@ services:
   # Kõigil projektidel on vaja andmebaasi. pgDuckDB toetab nii PostgreSQL-i kui DuckDB päringuid.
   db:
     image: pgduckdb/pgduckdb:18-v1.1.1
-    container_name: [PROJEKTI-NIMI]-db
+    container_name: projekt_ohukvaliteedi_vordlus-db
     env_file:
       - .env
     environment:
@@ -30,6 +30,27 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
+
+# --- Python ETL Script ---
+  etl:
+    image: python:3.12-slim
+    container_name: projekt_ohukvaliteedi_vordlus-etl
+    volumes:
+      - .:/app
+    working_dir: /app
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432  # Crucial: Inside Docker, the database listens on 5432, not 55432
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && python etl.py"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+
 
   # --- Töövoo konteiner (nt Python ETL skript) ---
   # Kasuta seda, kui sul on lihtne Python-põhine töövoog ilma Airflow'ta.
@@ -81,5 +102,5 @@ services:
   #     - "${DASHBOARD_PORT_HOST:-8501}:8501"
   #   command: ["streamlit", "run", "dashboard/app.py", "--server.address=0.0.0.0"]
 
-volumes:
-  pgdata:
+# volumes:
+#   pgdata:
