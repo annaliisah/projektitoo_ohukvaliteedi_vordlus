@@ -1,22 +1,13 @@
 import requests
 import psycopg2
 import os
-
+from datetime import datetime
 import openmeteo_requests
 
 import pandas as pd
 import requests_cache
 from retry_requests import retry
 
-# Andmebaasi ühenduse seaded (loetakse keskkonnamuutujatest)
-## originaal näitest ei töötanud
-# DB_CONFIG = {
-#     "host": os.getenv("DB_HOST", "db"),
-#     "port": int(os.getenv("DB_PORT", 5432)),
-#     "dbname": os.environ["POSTGRES_DB"],
-#     "user": os.environ["POSTGRES_USER"],
-#     "password": os.environ["POSTGRES_PASSWORD"],
-# }
 
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "db"),
@@ -79,18 +70,9 @@ def extract():
 
 
 def transform(raw_data):
-    """
-    Transform: puhasta ja normaliseeri andmed.
 
-    Sisend: JSON list API-st (iga element on dict)
-    Väljund: list tuple'itest kujul (name, capital, population, area, continent)
-    """
-    # käi raw_data üle, võta igast elemendist vajalikud väljad, tagasta list tuple'itest
     tulemus = []
 
-    # print("raw data type on: ", type(raw_data))
-    # print("len raw data on: ", len(raw_data))
-    # print("raw data: ", raw_data.head(100))
     for index, row in raw_data.iterrows():
         kuupaev = row["date"]
         pm10 = row["pm10"]
@@ -115,55 +97,69 @@ def transform(raw_data):
             indeksi_vaartus = "puudub info"
         tulemus.append((kuupaev, ohuseire_jaam, coordinates, pm10, pm2_5, ozone, nitrogen_dioxide, sulphur_dioxide, indeksi_vaartus))
 
-        # tulemus.append((name, capital, population, area, "Europe"))
-    # tulemus.sort(key=lambda r: r[2], reverse=True)
     return tulemus
 
 
 
-def load(rows):
-    """
-    Load: kirjuta andmed PostgreSQL tabelisse 
+def load(rows, conn):
 
-    Tabel peab sisaldama: id, name, capital, population, area_km2, continent, loaded_at
-    Laadimine peab olema idempotentne (TRUNCATE enne laadimist).
-
-    Näide kuidas PostgreSQL-iga ühenduda ja andmeid sisestada:
-        conn = psycopg2.connect(**DB_CONFIG)
-        cur = conn.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS test (id SERIAL PRIMARY KEY, name TEXT)")
-        cur.execute("INSERT INTO test (name) VALUES (%s)", ("väärtus",))
-        conn.commit()
-        cur.close()
-        conn.close()
-    """
-
-    conn = psycopg2.connect(**DB_CONFIG)
     cur = conn.cursor()
     # cur.execute("DROP TABLE IF EXISTS openmeteo_andmed")
-    cur.execute("CREATE TABLE IF NOT EXISTS openmeteo_andmed (id SERIAL PRIMARY KEY, date_gmt0 TIMESTAMP, ohuseire_jaam TEXT, coordinates TEXT, pm10 FLOAT, pm2_5 FLOAT, ozone FLOAT, nitrogen_dioxide FLOAT, sulphur_dioxide FLOAT, air_quality_index TEXT)")
-    cur.execute("TRUNCATE TABLE openmeteo_andmed ")
+    cur.execute("CREATE TABLE IF NOT EXISTS openmeteo_andmed (id SERIAL PRIMARY KEY, date_gmt0 TIMESTAMP, ohuseire_jaam TEXT, coordinates TEXT, pm10 FLOAT, pm2_5 FLOAT, ozone FLOAT, nitrogen_dioxide FLOAT, sulphur_dioxide FLOAT, air_quality_index TEXT, loaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)")
+    cur.execute("TRUNCATE TABLE openmeteo_andmed RESTART IDENTITY")
     for row in rows:
         cur.execute("INSERT INTO openmeteo_andmed (date_gmt0, ohuseire_jaam, coordinates, pm10, pm2_5, ozone, nitrogen_dioxide, sulphur_dioxide, air_quality_index) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)", row)
     conn.commit()
-    cur.close()
-    conn.close()
-    return 
+    # cur.close()
+    # conn.close()
+    return len(rows)
 
 
+def log_etl_run(conn, start_time, end_time, rows_loaded, status="success", error_msg=None):
+    """Logi ETL jooksu info."""
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS etl_log (
+            id SERIAL PRIMARY KEY,
+            start_time TIMESTAMP NOT NULL,
+            end_time TIMESTAMP NOT NULL,
+            duration_seconds NUMERIC(10,2),
+            rows_loaded INT,
+            status VARCHAR(20),
+            error_message TEXT
+        )
+    """)
+    duration = (end_time - start_time).total_seconds()
+    cur.execute(
+        """INSERT INTO etl_log (start_time, end_time, duration_seconds, rows_loaded, status, error_message)
+           VALUES (%s, %s, %s, %s, %s, %s)""",
+        (start_time, end_time, duration, rows_loaded, status, error_msg),
+    )
+    conn.commit()
+    print(f"  -> ETL jooks logitud ({duration:.1f}s, {rows_loaded} rida, staatus: {status})")
+    
 def main():
-    print("=== ETL protsess ===\n")
+    
+    print("=== Keerukam ETL protsess ===\n")
+    start_time = datetime.now()
+    conn = psycopg2.connect(**DB_CONFIG)
+    rows_loaded = 0
+    
+    try: 
+        raw = extract()
+        print(f"Extracted: {len(raw)} kirjet\n")
+        rows = transform(raw)
+        print(f"Transformed: {len(rows)} rida\n")
+        rows_loaded = load(rows, conn)
+        end_time = datetime.now()
+        log_etl_run(conn, start_time, end_time, rows_loaded)
+    except Exception as e:
+        end_time = datetime.now()
+        log_etl_run(conn, start_time, end_time, rows_loaded, "error", str(e))
+        raise
 
-    # Extract
-    raw = extract()
-    #print(f"Extracted: {len(raw)} kirjet\n")
-
-    # # Transform
-    rows = transform(raw)
-    print(f"Transformed: {len(rows)} rida\n")
-
-    # # Load
-    load(rows)
+    finally:
+        conn.close()
 
     print("\n=== ETL lõpetatud ===")
 
