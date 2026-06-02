@@ -209,7 +209,7 @@ fig.add_trace(go.Scatter(x=df["ts_eesti"], y=df["forecast_value"],
                          name="CAMS prognoos",
                          line=dict(color="#ff7f0e", width=2, dash="dot")))
 fig.update_layout(
-    title=f"{station['station_name']} — {indicator['indicator_name']}",
+    title=f"{indicator['indicator_name']} kontsentratsioon {station['station_name']} mõõtejaamas",
     xaxis_title="Kuupäev",
     yaxis_title=f"{clean_formula(indicator['formula'])} ({unit})",
     hovermode="x unified", height=500,
@@ -235,7 +235,7 @@ err_fig.add_trace(go.Scatter(
 ))
 
 err_fig.update_layout(
-    title="Prognoosivea muutus ajas",
+title=f"{indicator['indicator_name']} prognoosi kõrvalekalle mõõdetud väärtustest",
     xaxis_title="Kuupäev",
     yaxis_title=f"Viga ({unit})",
     hovermode="x unified",
@@ -282,7 +282,20 @@ st.plotly_chart(hour_fig, use_container_width=True)
 st.subheader("Andmekvaliteedi testid (viimane käivitus)")
 q = load_quality_tests()
 if q.empty:
-    st.info("Quality testid pole veel käivitatud.")
+    st.info("Andmekvaliteedi testid pole veel käivitatud.")
 else:
-    q["status"] = q["status"].map({"passed": "✓ passed", "failed": "✗ failed"})
+    q["status"] = q["status"].map({"passed": "✓ läbitud", "failed": "✗ ei ole läbitud"})
     st.dataframe(q, use_container_width=True, hide_index=True)
+
+failed_tests = (q["status"] == "failed").sum()
+
+if failed_tests == 0:
+    st.success(
+        "Kõik andmekvaliteedi kontrollid läbisid edukalt. "
+        "Andmed on värsked, unikaalsed ning vastavad etteantud reeglitele."
+    )
+else:
+    st.error(
+        f"Andmekvaliteedi kontrollides tuvastati {failed_tests} probleem(i). "
+        "Vaata ülalolevat tabelit täpsemaks infoks."
+    )
