@@ -1,80 +1,77 @@
 # Õhukvaliteedi mudelprognoosi ja seirejaama mõõtmiste võrdlus
 
-> **Juhend:** Asenda kõik nurksulgudes vormid oma sisuga enne esitamist. Kustuta see juhendrida.
-
 ## Äriküsimus
 
-[Kirjelda ühe-kahe lausega, millise andmetega seotud probleemi te lahendate ja kes sellest kasu saab.]
-Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega?  
-Projekt aitab hinnata CAMS mudelprognoosi täpsust Eesti tingimustes ning võimaldab võrrelda prognoose tegelike mõõtmistega eri piirkondades ja saasteainete lõikes.
+Kui hästi kattub Open-Meteo CAMS mudelipõhine õhukvaliteedi prognoos Eesti seirejaama tegelike mõõtmistega?
+
+Projekt võrdleb Ohuseire.ee mõõteandmeid ja Open-Meteo Air Quality API kaudu saadud CAMS prognoose. Demo keskendub Õismäe mõõtejaamale ja viiele peamisele õhukvaliteedi näitajale: SO₂, NO₂, O₃, PM10 ja PM2.5.
 
 **Mõõdikud:**
 
-1. [Esimene KPI või mõõdik — näiteks: päevane müük poe kohta]
-2. [Teine KPI või mõõdik]
-3. [Kolmas KPI või mõõdik — vabatahtlik]
+1. MAE ehk keskmine absoluutne viga mõõdetud ja prognoositud väärtuste vahel.
+2. Korrelatsioon mõõdetud ja prognoositud väärtuste vahel.
+3. Keskmine nihe ehk prognoositud väärtus - mõõdetud väärtus, mis näitab, kas CAMS kipub väärtusi üle- või alahindama.
 
-1. Mõõdetud ja prognoositud õhukvaliteedi väärtuste erinevus
-2. Keskmine absoluutne viga (MAE)
-
-## Arhitektuur - TODO
+## Arhitektuur
 
 ```mermaid
 flowchart LR
-    source[Andmeallikas] --> ingest[Sissevõtt]
-    ingest --> staging[(staging)]
-    staging --> transform[Transformatsioon]
-    transform --> mart[(mart)]
-    mart --> dashboard[Näidikulaud]
+    ohuseire[Ohuseire.ee API] --> ingest[Sissevõtt]
+    openmeteo[Open-Meteo Air Quality API] --> ingest
+    ingest --> staging[(PostgreSQL staging)]
+    staging --> transform[SQL transformatsioonid]
+    transform --> mart[(PostgreSQL mart)]
+    mart --> dashboard[Streamlit dashboard]
+    mart --> quality[Andmekvaliteedi testid]
+    scheduler[Cron scheduler] --> ingest
 ```
-
-Täpsem kirjeldus: [`docs/arhitektuur.md`](docs/arhitektuur.md)
 
 ## Andmestik
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| [Andmeallika nimi] | [API / fail / andmebaas] | Jah, [iga tund / päevas / muu] | Põhiandmevoog |
-| [Teise allika nimi] | [seed / dim-tabel] | Ei, staatiline | Kõrvaltabel |
-| Open-Meteo Air Quality API | API | Jah, iga tund | Mudelprognooside põhiandmevoog |
-| Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised |
-| Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade kirjeldused |
-| Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete ja mõõdikute kirjeldused |
+| Open-Meteo Air Quality API | API | Jah, iga tund | CAMS mudelprognoosid |
+| Ohuseire.ee mõõteandmed | API | Jah, iga tund | Tegelikud mõõtmised Eesti seirejaamast |
+| Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade nimed, koodid ja koordinaadid |
+| Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete nimed, valemid ja ühikud |
 
-## Stack - TODO
+## Stack
 
 | Komponent | Tööriist |
 |-----------|---------|
-| Sissevõtt | [Python / Airflow / muu] |
-| Transformatsioon | [SQL / dbt / muu] |
+| Sissevõtt | Python |
+| Transformatsioon | SQL |
 | Andmehoidla | PostgreSQL |
-| Näidikulaud | [Superset / Streamlit / muu] |
-| Orkestreerimine | [Airflow / cron / muu] |
+| Näidikulaud | Streamlit |
+| Orkestreerimine | cron |
 
-## Käivitamine - TODO 
+## Käivitamine
 
 ```bash
 # 1. Klooni repo ja liigu kausta
-git clone <repo-url>
-cd <projekti-kaust>
+git clone <repo-url> 
+cd projektitoo_ohukvaliteedi_vordlus
 
 # 2. Kopeeri keskkonnamuutujad
 cp .env.example .env
-# Muuda .env failis paroolid ja muud seaded vastavalt vajadusele
+# Vajadusel muuda .env väärtuseid. Vaikimisi kasutatakse Õismäe mõõtejaama ja viimase 7 päeva andmeid.
 
 # 3. Käivita teenused
 docker compose up -d --build
 
-# 4. [Vabatahtlik: käivita sissevõtt käsitsi esimesel korral]
-# docker compose exec pipeline python scripts/run_pipeline.py run-all
+# See käivitab kolm teenust:
+# - PostgreSQL andmebaas
+# - pipeline konteiner
+# - Streamlit dashboard
+
+# 4. Näidikulaud:
+http://localhost:8501
+
 ```
 
-Airflow (kui kasutatakse): http://localhost:8080 (kasutaja: airflow / parool: airflow)
-Näidikulaud: http://localhost:[PORT]
+## Saladused ja konfiguratsioon 
 
-## Saladused ja konfiguratsioon - TODO 
-
-Kõik saladused (paroolid, API võtmed, andmebaasi URL-id) on `.env` failis. Repos on ainult `.env.example`, mis näitab vajalike muutujate struktuuri ilma tegelike väärtusteta. Päris `.env` faili ei tohi GitHubi panna - see on `.gitignore`-s.
+Kõik saladused (paroolid, API võtmed, andmebaasi URL-id) on `.env` failis. 
 
 Vajalikud muutujad:
 
@@ -83,55 +80,96 @@ Vajalikud muutujad:
 | `DB_PASSWORD` | PostgreSQL parool | (saladus) |
 | `[teised]` | ... | ... |
 
-## Andmevoog lühidalt - TODO 
+## Andmevoog lühidalt
 
-1. **Sissevõtt** — [Kirjelda, kuidas andmed allikast kätte saadakse]
-2. **Laadimine** — Andmed laaditakse `staging` kihti
-3. **Transformatsioon** — [Kirjelda peamised arvutused ja mudelid]
-4. **Testimine** — [Mitu] andmekvaliteedi testi kontrollivad korrektsust
-5. **Näidikulaud** — [Kirjelda lühidalt, mida näidikulaud näitab]
+1. **Sissevõtt** — scripts.seed_dimensions pärib Ohuseire.ee API-st jaamade ja indikaatorite metaandmed ning salvestab need mart.dim_station ja mart.dim_indicator tabelitesse.
+scripts.fetch_ohuseire_monitoring pärib Ohuseire.ee mõõteandmed valitud jaamade ja indikaatorite kohta.
+scripts.fetch_openmeteo_airquality pärib Open-Meteo Air Quality API kaudu CAMS prognoosiandmed samadele saasteainetele.
+2. **Laadimine** — Toorandmed salvestatakse PostgreSQL staging skeemi.
+3. **Transformatsioon** — scripts/transform.sql teisendab andmed analüüsiks sobivasse kujusse. Mõõdetud ja prognoositud väärtused viiakse ühisesse faktitabelisse mart.fact_air_quality_observation.
+4. **Testimine** — scripts/quality_tests.sql kontrollib andmete korrektsust ning salvestab tulemused tabelisse quality.test_results. Projektis on 4 andmekvaliteedi testi.
+5. **Näidikulaud** — Mõõdetud ja prognoositud väärtuseid võrreldakse sama jaama, saasteaine ja tunni alusel. Dashboard kasutab võrdluseks tabelit või vaadet mart.fact_air_quality_comparison. Streamlit dashboard kuvab KPI-d, mõõdetud ja prognoositud väärtuste ajagraafiku, prognoosivea graafiku, suurimad prognoosivead ja andmekvaliteedi testide tulemused.
 
-## Andmekvaliteedi testid - TODO 
+## Andmekvaliteedi testid 
 
 Projekt kontrollib järgmist:
 
-1. [Test 1 - nt: kasutajate ID on unikaalne]
-2. [Test 2 - nt: tellimuse summa pole null]
-3. [Test 3 - nt: kuupäev jääb vahemikku 2020-2026]
-[Lisa rohkem, kui sul on]
+| Test | Selgitus |
+|---------|----------|
+| fact_no_negative_values | Kontrollib, et mõõdetud ja prognoositud väärtused ei oleks negatiivsed |
+| fact_pk_unique | Kontrollib, et faktitabeli loogiline primaarvõti oleks unikaalne |
+| fact_indicators_have_dim | Kontrollib, et iga faktirea indicator_id eksisteeriks dim_indicator tabelis |
+| fact_measurements_recent | Kontrollib, et viimane mõõtmine ei oleks vanem kui 6 tundi |
 
-Testide tulemused: [kuhu salvestatakse / kuidas vaadata]
+Testide tulemused salvestatakse: quality.test_results ning kuvatakse ka Streamlit dashboardis.
 
-## Projekti struktuur - TODO 
+## Projekti struktuur 
 
 ```
 .
+.
 ├── README.md
 ├── compose.yml
+├── Dockerfile
+├── requirements.txt
 ├── .env.example
-├── .gitignore
+├── dashboard/
+│   └── app.py
+│   └── _init_.py
+├── init/
+│   └── 01_create_schemas.sql
+├── scripts/
+│   ├── fetch_ohuseire_metadata.py
+│   ├── fetch_ohuseire_monitoring.py
+│   ├── fetch_openmeteo_airquality.py
+│   ├── seed_dimensions.py
+│   ├── run_pipeline.sh
+│   ├── transform.sql
+│   ├── quality_tests.sql
+│   └── pipeline/
+│       ├── __init__.py
+│       └── db.py
 ├── docs/
-│   ├── arhitektuur.md      ← nädal 1 väljund
-│   └── progress.md         ← nädal 2 väljund
-└── ...                     ← ülejäänud projektifailid
+│   ├── arhitektuur.md
+│   └── progress.md
+├── notebooks/
+│   └── 01_ohuseire.ipynb
+└── data/
+    ├── staging/
+    └── processed/
 ```
 
-## Kokkuvõte, puudused ja võimalikud edasiarendused - TODO 
+## Kokkuvõte, puudused ja võimalikud edasiarendused 
 
 **Kokkuvõte:**
-- [Loetle, mis on lõpule viidud, mis töötab hästi]
+Valmis on töötav andmevoog, mis:
+
+- pärib andmeid kahest ajas muutuvast API-st;
+- laeb andmed PostgreSQL andmebaasi;
+- teisendab toorandmed mart kihiks;
+- arvutab mõõdetud ja prognoositud väärtuste võrdluse;
+- käivitab andmekvaliteedi testid;
+- kuvab tulemused Streamlit dashboardis;
+- töötab Docker Compose abil korratavalt.
 
 **Puudused:**
-- [Loetle ausalt, mis jäi tegemata - see ei mõjuta hinnet negatiivselt, vaid aitab hinnata]
+- Lõplik demo keskendub ühele mõõtejaamale, Õismäele.
+- Andmete ajalooline ulatus on vaikimisi piiratud viimase 7 päevaga.
+- Kõiki Eesti mõõtejaamu ei ole dashboardis kasutusele võetud.
+-Mõned lühiajalised mõõtepiigid võivad prognoosimudelist erineda, mistõttu üksikute tundide vead võivad olla suuremad.
 
 **Mis edasi:**
-- [Mida tahaksid edasi teha, kui aega oleks rohkem]
+- Lisada rohkem Eesti õhukvaliteedi seirejaamu.
+- Pikendada ajaloolist ajavahemikku.
+- Lisada Eesti kaardivaade jaamade võrdlemiseks.
+- Lisada rohkem mudelikvaliteedi mõõdikuid.
+- Lisada automaatsed raportid või kokkuvõtted pipeline’i viimase jooksu kohta.
 
-## Meeskond - TODO rollid
+## Meeskond - rollid
 
 | Nimi | Roll |
 |------|------|
-| Anna-Liisa Hannus | [Roll] |
-| Heigo Reinek | [Roll] |
-| Kristen Maisey| [Roll] |
-| Liivika Koobakene | [Roll] |
+| Anna-Liisa Hannus | Transformatsioonid ja andmebaasi mudel |
+| Heigo Reinek | Andmekvaliteedi testid ja tehniline viimistlus |
+| Kristen Maisey| Dashboard ja dokumentatsioon |
+| Liivika Koobakene | Andmete sissevõtt ja pipeline |
