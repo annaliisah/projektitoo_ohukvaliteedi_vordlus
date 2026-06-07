@@ -77,7 +77,7 @@ Vajalikud muutujad:
 
 | Muutuja | Tähendus | Näide |
 |---------|----------|-------|
-| `DB_PASSWORD` | PostgreSQL parool | (saladus) |
+| `POSTGRES_PASSWORD` | PostgreSQL parool | (saladus) |
 | `[teised]` | ... | ... |
 
 ## Andmevoog lühidalt
