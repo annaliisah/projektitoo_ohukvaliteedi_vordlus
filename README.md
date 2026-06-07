@@ -12,7 +12,7 @@ Projekt võrdleb Ohuseire.ee mõõteandmeid ja Open-Meteo Air Quality API kaudu 
 2. **Korrelatsioon** mõõdetud ja prognoositud väärtuste vahel.
 3. **Keskmine nihe** (bias) ehk prognoositud väärtus − mõõdetud väärtus, mis näitab, kas CAMS kipub väärtusi üle- või alahindama.
 4. **Õhukvaliteedi indeks** (EEA European Air Quality Index, 6 taset: 1 = Hea … 6 = Eriti halb) iga tunni kohta, eraldi mõõdetud ja prognoositud andmete põhjal.
-5. **Indeksi kokkulangevus** — kui suurel osal tundidest klassifitseerivad CAMS ja seirejaam õhukvaliteedi samasse taset.
+5. **Indeksi kokkulangevus** — kui suurel osal tundidest klassifitseerivad CAMS ja seirejaam õhukvaliteedi samasse tasemesse.
 
 ## Arhitektuur
 
@@ -56,7 +56,7 @@ Võrdlus, mõõdikud ja indeks on **vaadetena** mart kihis (kõik arvutused on a
 |-----------|---------|
 | Sissevõtt | Python |
 | Transformatsioon | SQL |
-| Andmehoidla | PostgreSQL 17 |
+| Andmehoidla | PostgreSQL |
 | Näidikulaud | Streamlit + Plotly |
 | Orkestreerimine | cron (pipeline konteineris) |
 | Käivituskeskkond | Docker Compose |
@@ -102,8 +102,8 @@ Kõik saladused ja seaded on `.env` failis (vaata `.env.example`-st malli). Repo
 | `LOAD_DAYS` | Mitme päeva tagant andmeid laadida (Open-Meteo lubab kuni 92) | `7` |
 | `STATIONS` | Komaeraldatud jaamade airviro koodid (S05=Õismäe) | `S05` |
 | `INDICATOR_IDS` | Komaeraldatud ohuseire indikaatorite ID-d (1=SO₂, 3=NO₂, 6=O₃, 21=PM10, 23=PM2.5) | `1,3,6,21,23` |
-| `PIPELINE_CRON` | Cron-väljend pipeline'i jooksutamiseks | `0 * * * *` |
-| `RUN_ON_STARTUP` | Kas käivitada pipeline kohe konteineri startides | `true` |
+| `PIPELINE_CRON` | Cron pipeline'i jooksutamiseks, käivitab pipeline igal täistunnil | `0 * * * *` |
+| `RUN_ON_STARTUP` | Kas käivitada pipeline kohe konteinerit startides | `true` |
 
 ## Andmevoog lühidalt
 
@@ -202,22 +202,20 @@ Valmis on töötav andmevoog, mis:
 - Lõplik demo keskendub ühele mõõtejaamale, Õismäele. Kuigi pipeline toetab mitut jaama (`STATIONS` muutuja), pole rohkem jaamu testimisel valideeritud.
 - Andmete ajalooline ulatus on vaikimisi 7 päeva (Open-Meteo lubaks kuni 92).
 - Õismäe õhk on demoperioodil olnud puhas, mistõttu indeks püsib enamasti tasemel 1–2. Kõrgemad tasemed (3–6) ei pruugi praeguses andmestikus ilmuda.
-- Üksikud lühiajalised mõõtepiigid võivad CAMS-prognoosist erineda — mudelil on raske ennustada lokaalseid sündmusi.
 - Cron-scheduler jookseb pipeline-konteineris, mitte eraldi orkestreerimisvahendis (Airflow/Prefect); reaalseks tootmiskeskkonnaks vajaks tugevamat töövoo halduse kihti.
 
 **Mis edasi:**
 
 - Lisada rohkem Eesti õhukvaliteedi seirejaamu ja Eesti kaardivaade.
 - Pikendada ajaloolist ajavahemikku ja teha trendianalüüsi (kuude/aastate kaupa).
-- Lisada rohkem mudelikvaliteedi mõõdikuid (RMSE, hit rate kõrgematel tasemetel).
-- Lisada automaatsed raportid või kokkuvõtted iga pipeline-jooksu kohta.
-- Tugevdada orkestreerimist (Airflow/Prefect) ja monitooringut (Grafana).
+- Lisada rohkem mudelikvaliteedi mõõdikuid (nt RMSE, hit rate kõrgematel tasemetel).
+- Lisada automaatsed raportid või kokkuvõtted iga pipeline jooksu kohta.
+- Tugevdada orkestreerimist (Airflow).
 
 ## Meeskond — rollid
 
 | Nimi | Roll |
 |------|------|
-| Anna-Liisa Hannus | Transformatsioonid ja andmebaasi mudel |
-| Heigo Reinek | Andmekvaliteedi testid ja tehniline viimistlus |
+| Liivika Koobakene | Andmete sissevõtt, pipeline, andmebaasi mudel, transformatsioonid, kvaliteedimõõdikud |
+| Anna-Liisa Hannus | Andmete sissevõtt, pipeline, dashboard, dokumentatsioon |
 | Kristen Maisey | Dashboard ja dokumentatsioon |
-| Liivika Koobakene | Andmete sissevõtt ja pipeline |
