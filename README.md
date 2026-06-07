@@ -202,7 +202,7 @@ Valmis on töötav andmevoog, mis:
 - Lõplik demo keskendub ühele mõõtejaamale, Õismäele. Kuigi pipeline toetab mitut jaama (`STATIONS` muutuja), pole rohkem jaamu testimisel valideeritud.
 - Andmete ajalooline ulatus on vaikimisi 7 päeva (Open-Meteo lubaks kuni 92).
 - Õismäe õhk on demoperioodil olnud puhas, mistõttu indeks püsib enamasti tasemel 1–2. Kõrgemad tasemed (3–6) ei pruugi praeguses andmestikus ilmuda.
-- Cron-scheduler jookseb pipeline-konteineris, mitte eraldi orkestreerimisvahendis (Airflow/Prefect); reaalseks tootmiskeskkonnaks vajaks tugevamat töövoo halduse kihti.
+- Cron-scheduler jookseb pipeline-konteineris, mitte eraldi orkestreerimisvahendis (Airflow)
 
 **Mis edasi:**
 
