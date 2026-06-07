@@ -40,3 +40,35 @@ docker compose logs pipeline --tail 20
 
 Oodatav tulemus: pipeline logide lõpus `==> Pipeline lõpetatud`, brauseris dashboard 4 elemendiga (KPI, MAE tabel, ajagraafik, kvaliteedi testid).
 
+
+---
+
+## Sprint 3  (07.06.2026)
+
+### Mis sai valmis sprindi jooksul
+
+- [x] **Pipeline ühtlustatud** — `scripts/run_pipeline.sh` käivitab kõik sammud järjest (seed_dimensions → fetch_ohuseire_monitoring → fetch_openmeteo_airquality → transform.sql → quality_tests.sql) ja logib iga jooksu.
+- [x] **Andmevoog terviklik** — mõlemad allikad (Ohuseire.ee monitoring API, Open-Meteo Air Quality API) töötavad ja salvestavad staging kihti, transformatsioon teisendab need mart kihti.
+- [x] **Mart kihi laiendus** — lisaks faktitabelile `mart.fact_air_quality_observation` on nüüd 6 analüüsivaadet:
+  - `fact_air_quality_comparison` — mõõdetud vs prognoositud samal real;
+  - `fact_pollutant_index` — EEA indeksi tase 1–6 üksiku saasteaine kohta;
+  - `fact_air_quality_index` — üldindeks per jaam ja tund (halvim üksiku saasteaine tase);
+  - `fact_air_quality_metrics` — MAE, bias, korrelatsioon per jaam + saasteaine;
+  - `fact_hourly_error` — keskmine viga ööpäeva tunni kaupa;
+  - `fact_index_match` — kas mõõdetud ja prognoositud indeks klapivad samal tunnil.
+- [x] **Õhukvaliteedi indeks lisatud** — kasutusel EEA European Air Quality Index 6-tasemeline skaala (1=Hea ... 6=Eriti halb), katab kõik 5 saasteainet (SO₂, NO₂, O₃, PM10, PM2.5). Piirväärtused defineeritud SQL-is (`transform.sql`).
+- [x] **Dashboard viimistletud** — kõik äriloogika viidud mart kihti, dashboard teeb ainult `SELECT`-e. Põhigraafikul on joone värv vastav indeksi tasemele (piiripunktidesse interpoleeritud), eraldi sektsioon üldindeksi võrdluseks (mõõdetud vs prognoositud + KPI-d).
+- [x] **Andmekvaliteedi testid** — 4 testi (negatiivsed väärtused, primaarvõtme unikaalsus, iga fact rea indicator_id dim_indicator-is, mõõtmise värskus).
+- [x] **README täiendatud** — kõik malli sektsioonid täidetud, täielik `.env` muutujate tabel, andmevoo selgitus, indeksi tabel ja  "Puudused" loend.
+
+### Puudused
+
+- Demo keskendub ühele jaamale (Õismäe), kuigi pipeline toetab mitut.
+- Kõrgemad indeksi tasemed (3–6) jäid praeguses andmestikus realiseerimata, kuna Õismäe õhk on puhas.
+
+### Mis edasi (kui projekti edasi arendaks)
+
+- Rohkem jaamu + Eesti kaardivaade.
+- Pikem ajalooline ulatus + trendianalüüs.
+- Eraldi orkestreerija (Airflow cron'i asemel.
+- Rohkem mõõdikuid 
