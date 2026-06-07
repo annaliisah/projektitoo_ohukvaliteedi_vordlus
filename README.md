@@ -65,7 +65,7 @@ Võrdlus, mõõdikud ja indeks on **vaadetena** mart kihis (kõik arvutused on a
 
 ```bash
 # 1. Klooni repo ja liigu kausta
-git clone <repo-url>
+git clone https://github.com/annaliisah/projektitoo_ohukvaliteedi_vordlus.git
 cd projektitoo_ohukvaliteedi_vordlus
 
 # 2. Kopeeri keskkonnamuutujad
