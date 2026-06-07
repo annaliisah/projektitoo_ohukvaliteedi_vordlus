@@ -56,7 +56,7 @@ cd projektitoo_ohukvaliteedi_vordlus
 cp .env.example .env
 # Vajadusel muuda .env väärtuseid. Vaikimisi kasutatakse Õismäe mõõtejaama ja viimase 7 päeva andmeid.
 
-# 3. Käivita teenused
+# 3. Käivita teenused ja oota 30 sekundit enne näidikulaua avamist
 docker compose up -d --build
 
 # See käivitab kolm teenust:
