@@ -68,7 +68,7 @@ def clean_formula(s: str) -> str:
 
 
 
-# Andmete laadimine — kõik mart kihist, ainult SELECT-id.
+# Andmete laadimine 
 
 
 @st.cache_data(ttl=300)
@@ -305,14 +305,6 @@ def add_colored_line(
     fig, df: pd.DataFrame, y_col: str, boundaries: list[float],
     name: str, dash: str = "solid"
 ):
-    """Värvilised segmendid — iga lõik värvitud vastavalt enda väärtusele.
-    Joon on enne piiripunktidesse lõigatud (lisa_piiripunktid), nii et
-    iga lõik on tervenisti ühe taseme sees.
-
-    Lisaks joonistame algse joone (ilma interpoleeritud punktideta) peale
-    läbipaistva traceiga, mis kannab hover-tooltipi (x unified näitab siis
-    kuupäeva + originaalseid väärtusi nagu peabki).
-    """
     df2 = lisa_piiripunktid(df, y_col, boundaries)
     x = df2["ts_eesti"].tolist()
     y = df2[y_col].tolist()
@@ -330,14 +322,22 @@ def add_colored_line(
             showlegend=False,
             hoverinfo="skip",
         ))
-    
+
     fig.add_trace(go.Scatter(
         x=df["ts_eesti"], y=df[y_col],
         mode="lines",
-        line=dict(color="#888888", width=2.5, dash=dash),
-        opacity=0,
+        line=dict(color="rgba(136,136,136,0)", width=2.5, dash=dash),
+        showlegend=False,
         name=name,
         hovertemplate="%{y:.2f}<extra>" + name + "</extra>",
+    ))
+    
+    fig.add_trace(go.Scatter(
+        x=[None], y=[None],
+        mode="lines",
+        line=dict(color="#888888", width=2.5, dash=dash),
+        name=name,
+        hoverinfo="skip",
     ))
 
 
