@@ -82,16 +82,17 @@ Võrdluse aluseks on **(jaam, näitaja, tund)** ühik: iga selline rida saab kak
 
 ```mermaid
 flowchart LR
-    source3[Staatilised andmed e asukohad] --> ingest
-    source2[Open-Meteo Forecast API] --> ingest
-    source[ohuseire.ee API] --> ingest[Sissevõtt]
-    ingest --> staging[(staging PostgresSQL db)]
-    staging --> transform[Transformatsioon]
-    transform --> mart[(mart)]
-    mart --> dashboard[Näidikulaud]
+    ohuseire[Ohuseire.ee API] --> ingest[Sissevõtt]
+    openmeteo[Open-Meteo Air Quality API] --> ingest
+    ingest --> staging[(PostgreSQL staging)]
+    staging --> transform[SQL transformatsioonid]
+    transform --> mart[(PostgreSQL mart)]
+    mart --> dashboard[Streamlit dashboard]
     mart --> quality[Andmekvaliteedi testid]
-    scheduler[Scheduler nt APScheduler ] --> ingest
+    scheduler[Cron scheduler] --> ingest
 ```
+
+
 
 mart kihis kasutatakse dimensioon- ja faktitabelite loogikat. Dimensioonitabelid mart.dim_station, mart.dim_indicator ja mart.dim_time hoiavad jaamade, näitajate ja aja kirjeldavat infot, faktitabelid aga ajas muutuvaid väärtusi.
 
