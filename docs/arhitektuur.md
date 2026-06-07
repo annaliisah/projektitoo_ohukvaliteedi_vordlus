@@ -10,8 +10,8 @@ Projektis võetakse Eesti Keskkonnauuringute Keskuse (EKUK) õhuseire veebilehe 
 Allikas: [European Air Quality Index](https://airindex.eea.europa.eu/AQI/index.html#)
 
 Peamised viis õhukvaliteedi mõõdikut: 
-- peened osakesed PM<sub>10</sub>)
-- eriti peened osakesed (PM<sub>2.5</sub>
+- peened osakesed (PM<sub>10</sub>)
+- eriti peened osakesed (PM<sub>2.5</sub>)
 - troposfääri osoon (O<sub>3</sub>)
 - lämmastikdioksiid (NO<sub>2</sub>)
 - vääveldioksiid (SO<sub>2</sub>)
