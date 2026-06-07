@@ -50,3 +50,71 @@ ON CONFLICT (station_id, indicator_id, ts_hour, observation_type)
 DO UPDATE SET
     value = EXCLUDED.value,
     source_run_id = EXCLUDED.source_run_id;
+
+    
+-- 3) Õhukvaliteedi indeks per saasteaine + üldine indeks per (jaam, tund, observation_type)
+-- Allikas: Eesti Õhuaruanne 2022 tabel (NO2, PM10, O3, PM2.5)
+-- Skaala: 1 = väga hea, 5 = väga halb. SO2-le indeksit ei arvuta (tabelis lävesid pole).
+-- Üldindeks = halvim (kõrgeim) üksiku saasteaine indeks samal tunnil samas jaamas.
+CREATE OR REPLACE VIEW mart.fact_air_quality_index AS
+WITH per_pollutant AS (
+    SELECT
+        o.station_id,
+        o.ts_hour,
+        o.observation_type,
+        o.indicator_id,
+        o.value,
+        CASE
+            -- NO2 (ohuseire indicator_id = 3)
+            WHEN o.indicator_id = 3 THEN
+                CASE
+                    WHEN o.value IS NULL THEN NULL
+                    WHEN o.value <  50  THEN 1
+                    WHEN o.value < 100  THEN 2
+                    WHEN o.value < 200  THEN 3
+                    WHEN o.value < 400  THEN 4
+                    ELSE 5
+                END
+            -- PM10 (indicator_id = 21)
+            WHEN o.indicator_id = 21 THEN
+                CASE
+                    WHEN o.value IS NULL THEN NULL
+                    WHEN o.value <  25  THEN 1
+                    WHEN o.value <  50  THEN 2
+                    WHEN o.value <  90  THEN 3
+                    WHEN o.value < 180  THEN 4
+                    ELSE 5
+                END
+            -- O3 (indicator_id = 6)
+            WHEN o.indicator_id = 6 THEN
+                CASE
+                    WHEN o.value IS NULL THEN NULL
+                    WHEN o.value <  60  THEN 1
+                    WHEN o.value < 120  THEN 2
+                    WHEN o.value < 180  THEN 3
+                    WHEN o.value < 240  THEN 4
+                    ELSE 5
+                END
+            -- PM2.5 (indicator_id = 23)
+            WHEN o.indicator_id = 23 THEN
+                CASE
+                    WHEN o.value IS NULL THEN NULL
+                    WHEN o.value <  15  THEN 1
+                    WHEN o.value <  30  THEN 2
+                    WHEN o.value <  55  THEN 3
+                    WHEN o.value < 110  THEN 4
+                    ELSE 5
+                END
+            -- SO2 ja muud: indeksit ei arvuta
+            ELSE NULL
+        END AS pollutant_index
+    FROM mart.fact_air_quality_observation o
+)
+SELECT
+    station_id,
+    ts_hour,
+    observation_type,
+    MAX(pollutant_index) AS overall_index
+FROM per_pollutant
+WHERE pollutant_index IS NOT NULL
+GROUP BY station_id, ts_hour, observation_type;
