@@ -14,9 +14,6 @@ st.set_page_config(page_title="Õhukvaliteedi võrdlus", layout="wide")
 
 st.markdown("""
 <style>
-.stApp {
-    background-color: #f3f8ff;
-}
 
 [data-testid="metric-container"] {
     background-color: white;
@@ -26,19 +23,19 @@ st.markdown("""
 }
 
 [data-baseweb="select"] {
-    background-color: white;
+    background-color: gray;
     border-radius: 10px;
 }
 
 [data-testid="stMetric"] {
-    background-color: white;
+    background-color: gray;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
            
 [data-testid="stDataFrame"] {
-    background-color: white;
+    background-color: gray;
     border-radius: 12px;
     padding: 10px;
 }
