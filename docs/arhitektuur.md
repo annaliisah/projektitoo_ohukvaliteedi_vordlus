@@ -54,7 +54,7 @@ Täpsustuseks:
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
-- Allikas: **CAMS European air quality forecast ** Open-Meteo API kaudu.
+- Allikas: **CAMS European air quality forecast** Open-Meteo API kaudu.
 - Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 11x11 km ruudustikukastike.
 - Intervall: **tunnipõhised väärtused**.
 - Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid x päeva ka `past_days` parameetriga (maksimaalselt 92 päeva võimalik). 
