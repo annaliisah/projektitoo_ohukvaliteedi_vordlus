@@ -50,7 +50,7 @@ Võrdlus, mõõdikud ja indeks on **vaadetena** mart kihis (kõik arvutused on a
 | Ohuseire.ee jaamade metaandmed | API | Harva muutuv | Seirejaamade nimed, koodid ja koordinaadid |
 | Ohuseire.ee näitajate loend | API | Harva muutuv | Saasteainete nimed, valemid ja ühikud |
 
-## Stack
+## Tööriistad
 
 | Komponent | Tööriist |
 |-----------|---------|
