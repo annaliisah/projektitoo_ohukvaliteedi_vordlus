@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-# KÃ¤ivitab kogu pipeline'i jÃ¤rjest. Kasutatakse nii esmakÃ¤ivitusel kui ka cron scheduelris iga tund.
+# Käivitab kogu pipeline'i järjest. Kasutatakse nii esmakÃ¤ivitusel kui ka cron scheduleris iga tund.
 set -e
 
 echo "==> [$(date -u +%Y-%m-%dT%H:%M:%SZ)] Pipeline algab"
@@ -23,4 +23,4 @@ PGPASSWORD="$POSTGRES_PASSWORD" psql \
     -h "$DB_HOST" -p 5432 -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
     -f scripts/quality_tests.sql
 
-echo "==> [$(date -u +%Y-%m-%dT%H:%M:%SZ)] Pipeline lÃµpetatud"
+echo "==> [$(date -u +%Y-%m-%dT%H:%M:%SZ)] Pipeline lõpetatud"
