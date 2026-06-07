@@ -99,7 +99,7 @@ def load_quality_tests() -> pd.DataFrame:
 
 stations, indicators = load_dims()
 if stations.empty or indicators.empty:
-    st.error("Andmebaasis pole dimensioone. Käivita scripts/seed_dimensions.py. Kui skript on juba käivitatud, värskenda lehte 30 sekundi pärast")
+    st.error("Andmebaasis pole dimensioone. Käivita scripts/seed_dimensions.py.")
     st.stop()
 
 stations["label"] = stations["station_name"] + " (" + stations["airviro_code"] + ")"
