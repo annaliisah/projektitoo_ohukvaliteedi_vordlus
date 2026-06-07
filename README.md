@@ -203,6 +203,9 @@ Valmis on töötav andmevoog, mis:
 - Andmete ajalooline ulatus on vaikimisi 7 päeva (Open-Meteo lubaks kuni 92).
 - Õismäe õhk on demoperioodil olnud puhas, mistõttu indeks püsib enamasti tasemel 1–2. Kõrgemad tasemed (3–6) ei pruugi praeguses andmestikus ilmuda.
 - Cron-scheduler jookseb pipeline-konteineris, mitte eraldi orkestreerimisvahendis (Airflow)
+- Andmekvaliteedi testid kontrollivad NULL-e, duplikaate ja vahemikke, aga puuduvate tundide ehk aukude osakaalu testi pole (arhitektuuris lubatud, jäi tegemata).
+- Dashboardis ei kuvata viimase eduka pipeline-jooksu `run_id` ega aega, seega kasutaja ei näe kohe, kas andmed on värsked või scheduler on kinni jooksnud.
+- Mart-kihis on iga jaama-näitaja vaatluste arv olemas (`fact_air_quality_metrics.obs_count`), aga dashboardis pole filtrit minimaalse vaatluste arvu järgi ehk mõõdikuid võidakse näidata ka väga väheste vaatluste põhjal.
 
 **Mis edasi:**
 
