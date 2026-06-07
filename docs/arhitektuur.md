@@ -3,14 +3,15 @@
 ## Äriküsimus
 
 Kui hästi kattub mudelipõhine õhukvaliteedi hinnang Eesti seirejaamade tegelike mõõtmistega? 
-Projektis võetakse Eesti Keskkonnauuringute Keskuse (EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks (link: [Keskkonnaportaal EESTI ÕHUKVALITEEDI ÜLEVAADE](https://keskkonnaportaal.ee/sites/default/files/Teemad/Välisõhk/Õhuaruanne%202022.pdf))
+Projektis võetakse Eesti Keskkonnauuringute Keskuse (EKUK) õhuseire veebilehe ohuseire.ee API-st valitud mõõtejaamadest mõõdetud õhukvaliteedi näitajad, mille põhjal leitakse igale tunnile õhukvaliteedi indeks:
 
-<img width="1217" height="377" alt="image" src="https://github.com/user-attachments/assets/813e84de-1feb-4c69-948a-95c36789ed3d" />
+<img width="651" height="364" alt="image" src="https://github.com/user-attachments/assets/18063d8e-9534-4968-880c-9107e4de295a" />
 
-Allikas: [Keskkonnaportaal EESTI ÕHUKVALITEEDI ÜLEVAADE](https://keskkonnaportaal.ee/sites/default/files/Teemad/Välisõhk/Õhuaruanne%202022.pdf)
+Allikas: [European Air Quality Index](https://airindex.eea.europa.eu/AQI/index.html#)
 
 Peamised viis õhukvaliteedi mõõdikut: 
-- osakesed (PM<sub>2.5</sub> ja PM<sub>10</sub>),
+- peened osakesed PM<sub>10</sub>)
+- eriti peened osakesed (PM<sub>2.5</sub>
 - troposfääri osoon (O<sub>3</sub>)
 - lämmastikdioksiid (NO<sub>2</sub>)
 - vääveldioksiid (SO<sub>2</sub>)
@@ -54,7 +55,7 @@ Täpsustuseks:
 
 ### Prognoositud andmed (Open-Meteo Air Quality API, CAMS)
 
-- Allikas: **CAMS European air quality forecast ** Open-Meteo API kaudu.
+- Allikas: **CAMS European air quality forecast** Open-Meteo API kaudu.
 - Mõõtepunktideks valitakse iga Eesti seirejaama koordinaatidele lähim 11x11 km ruudustikukastike.
 - Intervall: **tunnipõhised väärtused**.
 - Ajalooline vahemik: `start_date` / `end_date` kaudu, viimaseid x päeva ka `past_days` parameetriga (maksimaalselt 92 päeva võimalik). 

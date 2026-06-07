@@ -4,7 +4,7 @@
 
 Kui hästi kattub Open-Meteo CAMS mudelipõhine õhukvaliteedi prognoos Eesti seirejaama tegelike mõõtmistega?
 
-Projekt võrdleb Ohuseire.ee mõõteandmeid ja Open-Meteo Air Quality API kaudu saadud CAMS prognoose. Demo keskendub Õismäe mõõtejaamale ja viiele peamisele õhukvaliteedi näitajale: SO₂, NO₂, O₃, PM10 ja PM2.5.
+Projekt võrdleb Ohuseire.ee mõõteandmeid ja Open-Meteo Air Quality API kaudu saadud CAMS prognoose. Demo keskendub Õismäe mõõtejaamale ja viiele peamisele õhukvaliteedi näitajale: SO₂, NO₂, O₃, PM<sub>10</sub> ja PM<sub>2.5</sub>.
 
 **Mõõdikud:**
 
@@ -56,7 +56,7 @@ cd projektitoo_ohukvaliteedi_vordlus
 cp .env.example .env
 # Vajadusel muuda .env väärtuseid. Vaikimisi kasutatakse Õismäe mõõtejaama ja viimase 7 päeva andmeid.
 
-# 3. Käivita teenused
+# 3. Käivita teenused ja oota 30 sekundit enne näidikulaua avamist
 docker compose up -d --build
 
 # See käivitab kolm teenust:
