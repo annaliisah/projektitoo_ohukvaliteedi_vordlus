@@ -191,7 +191,7 @@ Valmis on töötav andmevoog, mis:
 
 - pärib andmeid kahest ajas muutuvast API-st (Ohuseire.ee ja Open-Meteo CAMS);
 - laeb toorandmed PostgreSQL staging kihti koos run-auditeerimisega;
-- teisendab need mart kihiks (1 fakttabel + 6 analüüsivaadet);
+- teisendab need mart kihiks (1 faktitabel + 6 analüüsivaadet);
 - arvutab MAE, biasi, korrelatsiooni ja õhukvaliteedi indeksi otse andmebaasi tasemel;
 - käivitab iga jooksu järel andmekvaliteedi testid;
 - kuvab tulemused Streamlit dashboardis;
@@ -211,14 +211,13 @@ Valmis on töötav andmevoog, mis:
 
 - Lisada rohkem Eesti õhukvaliteedi seirejaamu ja Eesti kaardivaade.
 - Pikendada ajaloolist ajavahemikku ja teha trendianalüüsi (kuude/aastate kaupa).
-- Lisada rohkem mudelikvaliteedi mõõdikuid (nt RMSE, hit rate kõrgematel tasemetel).
 - Lisada automaatsed raportid või kokkuvõtted iga pipeline jooksu kohta.
 - Tugevdada orkestreerimist (Airflow).
 
-## Meeskond — rollid
+## Meeskond 
 
 | Nimi | Roll |
 |------|------|
-| Liivika Koobakene | Andmete sissevõtt, pipeline, andmebaasi mudel, transformatsioonid, kvaliteedimõõdikud |
+| Liivika Koobakene | Andmete sissevõtt, pipeline, andmebaasi mudel, transformatsioonid, kvaliteedimõõdikud, dashboard |
 | Anna-Liisa Hannus | Andmete sissevõtt, pipeline, dashboard, dokumentatsioon |
 | Kristen Maisey | Dashboard ja dokumentatsioon |
