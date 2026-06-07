@@ -307,15 +307,18 @@ def add_colored_line(
 ):
     """Värvilised segmendid — iga lõik värvitud vastavalt enda väärtusele.
     Joon on enne piiripunktidesse lõigatud (lisa_piiripunktid), nii et
-    iga lõik on tervenisti ühe taseme sees."""
+    iga lõik on tervenisti ühe taseme sees.
+
+    Lisaks joonistame algse joone (ilma interpoleeritud punktideta) peale
+    läbipaistva traceiga, mis kannab hover-tooltipi (x unified näitab siis
+    kuupäeva + originaalseid väärtusi nagu peabki).
+    """
     df2 = lisa_piiripunktid(df, y_col, boundaries)
     x = df2["ts_eesti"].tolist()
     y = df2[y_col].tolist()
     for i in range(len(x) - 1):
         if y[i] is None or y[i+1] is None or pd.isna(y[i]) or pd.isna(y[i+1]):
             continue
-        # Värv = lõigu keskpunkti taseme värv (kuna lõik on terve ühes tasemes,
-        # on vasaku ja parema otsa tase sama).
         mid = (y[i] + y[i+1]) / 2.0
         level = value_to_level(mid, boundaries)
         color = INDEX_COLORS[min(level, len(INDEX_COLORS)) - 1]
@@ -327,12 +330,14 @@ def add_colored_line(
             showlegend=False,
             hoverinfo="skip",
         ))
-    # Legendi näiv trace
+    
     fig.add_trace(go.Scatter(
-        x=[None], y=[None],
+        x=df["ts_eesti"], y=df[y_col],
         mode="lines",
         line=dict(color="#888888", width=2.5, dash=dash),
+        opacity=0,
         name=name,
+        hovertemplate="%{y:.2f}<extra>" + name + "</extra>",
     ))
 
 
@@ -484,7 +489,7 @@ fig.update_layout(
     yaxis_title=f"{clean_formula(indicator['formula'])} ({unit})",
     hovermode="x unified", height=500,
 )
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True, key="main_time_chart")
 
 
 # Vea graafik
