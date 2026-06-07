@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-# Käivitab kogu pipeline'i järjest. Kasutatakse nii esmakÃ¤ivitusel kui ka cron scheduleris iga tund.
+# Käivitab kogu pipeline'i järjest. Kasutatakse nii esmakäivitusel kui ka cron scheduleris iga tund.
 set -e
 
 echo "==> [$(date -u +%Y-%m-%dT%H:%M:%SZ)] Pipeline algab"
