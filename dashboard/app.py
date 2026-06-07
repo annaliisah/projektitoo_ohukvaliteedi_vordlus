@@ -223,20 +223,17 @@ err_fig.add_trace(go.Scatter(
     line=dict(color="#d62728", width=2)
 ))
 
-err_fig.add_trace(go.Scatter(
-    x=[df["ts_eesti"].min(), df["ts_eesti"].max()],
-    y=[0, 0],
-    mode="lines",
-    name="Täpse prognoosi tase (viga = 0)",
-    line=dict(color="black", dash="dash")
-))
-
 err_fig.update_layout(
-title=f"{indicator['indicator_name']} prognoosi kõrvalekalle mõõdetud väärtustest",
+    title=f"{indicator['indicator_name']} prognoosi kõrvalekalle mõõdetud väärtustest",
     xaxis_title="Kuupäev",
     yaxis_title=f"Viga ({unit})",
     hovermode="x unified",
     height=350,
+    yaxis=dict(
+        zeroline=True,
+        zerolinecolor="rgba(125,125,125,0.8)",
+        zerolinewidth=1,
+    ),
 )
 
 st.plotly_chart(err_fig, use_container_width=True)
@@ -259,19 +256,16 @@ hour_fig.add_trace(go.Bar(
     name="Keskmine prognoosiviga"
 ))
 
-hour_fig.add_trace(go.Scatter(
-    x=[hourly_summary["hour"].min(), hourly_summary["hour"].max()],
-    y=[0, 0],
-    mode="lines",
-    name="Viga = 0",
-    line=dict(dash="dash")
-))
-
 hour_fig.update_layout(
     title="Kas prognoos eksib rohkem teatud kellaaegadel?",
     xaxis_title="Tund",
     yaxis_title=f"Keskmine viga ({unit})",
-    height=400
+    height=400,
+    yaxis=dict(
+        zeroline=True,
+        zerolinecolor="rgba(125,125,125,0.8)",
+        zerolinewidth=1,
+    ),
 )
 
 st.plotly_chart(hour_fig, use_container_width=True)
